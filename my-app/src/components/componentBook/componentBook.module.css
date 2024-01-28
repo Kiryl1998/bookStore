@@ -1,0 +1,81 @@
+.title {
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 64px;
+  margin-bottom: 48px;
+}
+.wrapBook {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 72px;
+}
+.wrapImgBook {
+  width: 550px;
+  height: 470px;
+  background-color: #fee9e2;
+  position: relative;
+}
+.likeImg {
+  font-size: 24px;
+  padding: 16px;
+  color: white;
+  position: absolute;
+  background-color: black;
+  right: 0;
+  top: 0;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+.wrapContent {
+  width: 450px;
+  padding: 40px 0px 0px 0px;
+  border-top: 1px solid lightgray;
+}
+.wrapPriceRating {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.price {
+  font-size: 40px;
+}
+.rating {
+}
+.wrapItem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.wrapList {
+  display: flex;
+  justify-content: space-between;
+}
+.item {
+}
+.itemList {
+  color: lightgray;
+  margin-bottom: 14px;
+}
+.itemListDis {
+  text-align: right;
+  margin-bottom: 14px;
+}
+.moreDetailse {
+  display: flex;
+  margin-bottom: 60px;
+}
+.previewBook {
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+}
+.wrapDescription{
+  margin-top: 50px;
+}

@@ -1,0 +1,43 @@
+.wrap {
+  display: flex;
+  justify-content: end;
+  border-top: 1px solid #e7e7e7;
+  margin-bottom: 80px;
+  padding-top: 48px;
+}
+.wrapContent {
+}
+.wrapText {
+  width: 256px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.wrapText:nth-child(2) {
+  margin-bottom: 64px;
+}
+.wrapText:nth-child(3) {
+  margin-bottom: 64px;
+}
+.textLeft {
+  color: #a8a8a8;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+.textRight {
+  color: #313037;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+.textTotal {
+  color: #313037;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px; /* 150% */
+}

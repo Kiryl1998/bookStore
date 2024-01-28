@@ -1,0 +1,27 @@
+.wrapTitleNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 72px 0px 42px 0px;
+}
+.title {
+  text-transform: uppercase;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+}
+.wrapNavigation {
+  width: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.buttonPrev {
+  cursor: pointer;
+}
+.buttonNext {
+  cursor: pointer;
+}
+.wrapSlider {
+  padding-bottom: 72px;
+}

@@ -1,0 +1,44 @@
+.singUp {
+  background-color: white;
+  padding: 90px 0px 100px 0px;
+}
+.container {
+  max-width: 1270px;
+  margin: auto;
+}
+.wrap {
+  max-width: 550px;
+  margin: auto;
+  border: 1px solid #e7e7e7;
+}
+.wrapTitleForm {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #e7e7e7;
+}
+.title {
+  width: 239px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #313037;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 26px 0px 20px 0px;
+  cursor: pointer;
+}
+.titSingIn {
+  color: #a8a8a8;
+}
+.titSingUp {
+  border-bottom: 2px solid black;
+}
+.form {
+  padding: 32px 32px 40px;
+}

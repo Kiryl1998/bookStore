@@ -1,0 +1,38 @@
+.btn {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 40px;
+  cursor: pointer;
+}
+.addToCart {
+  width: 100%;
+  margin-bottom: 40px;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+.singIn {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+  margin-top: 24px;
+}
+.total {
+  width: 100%;
+  color: #fff;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}

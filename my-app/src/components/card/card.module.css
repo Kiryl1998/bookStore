@@ -1,0 +1,45 @@
+.wrapCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  cursor: pointer;
+}
+.wrapImgCard {
+  width: 100%;
+  max-height: 420px;
+  background-color: #d7e4fd;
+  margin-bottom: 10px;
+}
+.img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  object-position: center;
+}
+.title {
+  width: 100%;
+  text-align: justify;
+  height: 46px;
+  margin-bottom: 10px;
+}
+.subTitle {
+  width: 100%;
+  text-align: justify;
+  color: lightgrey;
+  height: 44px;
+  margin-bottom: 10px;
+}
+.wrapPriceRating{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+}
+.rating {
+}
+.star-svg{
+}

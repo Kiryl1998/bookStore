@@ -1,0 +1,25 @@
+.header {
+  background-color: white;
+  padding: 20px;
+}
+.container {
+  max-width: 1270px;
+  margin: auto;
+}
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #E7E7E7;
+  padding-bottom: 20px;
+}
+.title {
+  cursor: default;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.wrapIcon {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+}

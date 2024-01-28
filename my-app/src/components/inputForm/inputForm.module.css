@@ -1,0 +1,21 @@
+.wrapInputForm {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.label {
+  margin-bottom: 5px;
+  color: #313037;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px; /* 200% */
+}
+.input {
+  padding: 14px 0px 14px 20px;
+  border: 1px solid #e7e7e7;
+}
+.subInput {
+  margin-top: 10px;
+  cursor: pointer;
+}

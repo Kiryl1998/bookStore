@@ -1,0 +1,17 @@
+.footer {
+  background-color: white;
+}
+.container {
+  max-width: 1270px;
+  margin: auto;
+}
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e7e7e7;
+  padding: 35px 0px;
+}
+.text {
+  color: lightgray;
+}

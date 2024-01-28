@@ -1,0 +1,14 @@
+.book {
+  background-color: white;
+}
+.container {
+  max-width: 1270px;
+  margin: auto;
+}
+.wrap {
+}
+.iconArrow {
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+

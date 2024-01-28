@@ -1,0 +1,15 @@
+.tabs {
+}
+.item {
+  display: flex;
+}
+.itemList {
+  padding: 0 40px 24px;
+  margin-right: 40px;
+  color: lightgray;
+  cursor: pointer;
+}
+.itemList:first-child{
+  color: black;
+  border-bottom: 1px solid black;
+}

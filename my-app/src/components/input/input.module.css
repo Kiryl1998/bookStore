@@ -1,0 +1,17 @@
+.wrap{
+  position: relative;
+  width: 800px;
+}
+.input {
+  width: 100%;
+  font-size: 15px;
+  outline: none;
+  border: 1px solid #E7E7E7;
+  padding: 10px 0 10px 15px;
+}
+.icon{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+}

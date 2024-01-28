@@ -1,0 +1,21 @@
+.wrap {
+  background-color: #f4eefd;
+  padding: 56px;
+  margin-top: 70px;
+}
+.title {
+  text-transform: uppercase;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+}
+.subTitle {
+  margin-bottom: 32px;
+}
+.subTitle p {
+  color: #a8a8a8;
+}
+.wrapForm {
+  display: flex;
+}
