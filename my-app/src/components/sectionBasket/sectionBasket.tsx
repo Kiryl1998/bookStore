@@ -4,9 +4,13 @@ import Icon from '../icon/icon';
 import styleSectionBasket from './sectionBasket.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
-import Total from '../totalBasket/totalBasket';
+import SimilarBook from '../similarBook/similarBook';
 
-const SectionBasket = () => {
+interface PropsSectionBasket {
+  card: JSX.Element;
+}
+
+const SectionBasket = (props: PropsSectionBasket) => {
   const navigation = useNavigate();
   return (
     <section className={styleSectionBasket.basket}>
@@ -24,8 +28,8 @@ const SectionBasket = () => {
             }
           />
           <h2 className={styleSectionBasket.title}>Your cart</h2>
-          <CardBasketLike />
-          <Total />
+          {props.card}
+          <SimilarBook title={'Popular Books'} />
         </div>
       </div>
     </section>

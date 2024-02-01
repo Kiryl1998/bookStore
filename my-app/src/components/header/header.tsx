@@ -12,9 +12,12 @@ import {
 } from '@fortawesome/free-regular-svg-icons';
 import styleInput from '../input/input.module.css';
 import { useNavigate } from 'react-router-dom';
+import { handleInputSearch } from '../swiperGrid/search';
+import { useAppDispatch } from '../../store/hooks';
 
 const Header = () => {
   const navigation = useNavigate();
+  const dispatch = useAppDispatch();
   return (
     <header className={styleHeader.header}>
       <div className={styleHeader.container}>
@@ -28,6 +31,7 @@ const Header = () => {
             bookstore
           </h2>
           <Input
+            onInput={(event) => handleInputSearch(event, navigation, dispatch)}
             placeholder={'Search'}
             icon={
               <Icon
@@ -41,7 +45,12 @@ const Header = () => {
             }
           />
           <div className={styleHeader.wrapIcon}>
-            <Icon icon={<FontAwesomeIcon icon={regularHeart} />} />
+            <Icon
+              onClick={() => {
+                navigation('/Favorite');
+              }}
+              icon={<FontAwesomeIcon icon={regularHeart} />}
+            />
             <Icon
               onClick={() => {
                 navigation('/Basket');

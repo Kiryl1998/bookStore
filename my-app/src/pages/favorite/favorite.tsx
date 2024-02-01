@@ -1,16 +1,15 @@
-import CardBasketLike from '../../components/cardBasketLike/cardBasketLike';
+import CardFavorite from '../../components/cardFavorite/cardFavorite';
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import SectionBasket from '../../components/sectionBasket/sectionBasket';
 
-const Basket = () => {
+const Favorite = () => {
   return (
     <>
       <Header />
-      <SectionBasket card={<CardBasketLike />} />
+      <SectionBasket card={<CardFavorite />} />
       <Footer />
     </>
   );
 };
-
-export default Basket;
+export default Favorite;

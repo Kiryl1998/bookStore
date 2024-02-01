@@ -1,22 +1,20 @@
 import { useEffect, useState } from 'react';
-import { localStorageBasket } from '../../localStorage/Basket';
 import Button from '../button/button';
 import styleTotal from './totalBasket.module.css';
-import { IBook } from '../componentBook/componentBook';
 import CardBasketLike from '../cardBasketLike/cardBasketLike';
+import { IBook } from '../componentBook/componentBook';
 
-const Total = () => {
-  const [cards, setCard] = useState(localStorageBasket);
-  const [sumTotal, setSumTotal] = useState(0);
-  useEffect(() => {
-    setSumTotal(
-      cards.reduce(
-        (sum: number, item: IBook) =>
-          sum + parseInt(item.price.replace('$', '')),
-        0
-      )
-    );
-  }, [<CardBasketLike />]);
+interface propsTotal {
+  stateCards: IBook[];
+}
+
+const Total = ({ stateCards }: propsTotal) => {
+  const sumTotal = stateCards
+    .map((item: { price: string }) => item.price)
+    .reduce((sum, item) => sum + Number(item.replace('$', '')), 0);
+
+  const vat = ((sumTotal / 100) * 3).toFixed(2);
+  const total = (sumTotal + Number(vat)).toFixed(2);
 
   return (
     <form className={styleTotal.wrap}>
@@ -27,11 +25,11 @@ const Total = () => {
         </div>
         <div className={styleTotal.wrapText}>
           <span className={styleTotal.textLeft}>VAT</span>
-          <span className={styleTotal.textRight}>$12</span>
+          <span className={styleTotal.textRight}>{`$ ${vat}`}</span>
         </div>
         <div className={styleTotal.wrapText}>
-          <span className={styleTotal.textTotal}>Total</span>
-          <span className={styleTotal.textTotal}>$12</span>
+          <span className={styleTotal.textTotal}>Total:</span>
+          <span className={styleTotal.textTotal}>{`$ ${total}`}</span>
         </div>
         <Button type={'total'} btnText={'check out'} />
       </div>

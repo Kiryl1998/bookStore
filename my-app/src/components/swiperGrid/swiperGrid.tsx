@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import styleCard from '../card/card.module.css';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -69,7 +68,10 @@ export default function SwiperGrid() {
         className="mySwiper"
       >
         {cards.map((item: ICard) => (
-          <SwiperSlide onClick={() => onClick(item.isbn13)} key={item.isbn13}>
+          <SwiperSlide
+            onClick={() => onClick(item.isbn13)}
+            key={item.isbn13}
+          >
             <Card
               image={item.image}
               title={item.title}

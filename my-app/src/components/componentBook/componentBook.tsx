@@ -11,10 +11,17 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchBook } from '../../store/actions/BookAction';
 import { RootState } from '../../store/store';
 import { Rating } from 'react-simple-star-rating';
-import { setLocalStorageBasket } from '../../localStorage/Basket';
+import { addBasket, count } from '../../store/actions/addBasket';
+import { setLocalCard } from '../../localStore/localStore';
+import {
+  arrCardsFavorite,
+  setLocalCardFavorite,
+} from '../../localStore/localStoreFavorite';
 
 export interface IBook {
   authors: string;
+  count: number;
+  favorite: boolean;
   desc: string;
   error: string;
   image: string;
@@ -39,19 +46,22 @@ const ComponentBook = () => {
   const bookContent = useAppSelector(
     (RootReducer: RootState) => RootReducer.bookReducer.book
   ) as IBook;
+
   const { id } = useParams();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(fetchBook(id));
   }, []);
-
   return (
     <>
       <h1 className={styleComponentBook.title}>{bookContent.title}</h1>
       <div className={styleComponentBook.wrapBook}>
         <div className={styleComponentBook.wrapImgBook}>
           <Icon
+            onClick={() => {
+              setLocalCardFavorite({ ...bookContent, favorite: true });
+            }}
             icon={
               <FontAwesomeIcon
                 icon={regularHeart}
@@ -101,7 +111,9 @@ const ComponentBook = () => {
             <Icon icon={<FontAwesomeIcon icon={faChevronDown} />} />
           </div>
           <Button
-            onClick={() => setLocalStorageBasket(bookContent)}
+            onClick={() => {
+              setLocalCard({ ...bookContent, count: 1 });
+            }}
             type="addToCart"
             btnText={'add to cart'}
           />

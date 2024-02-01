@@ -24,9 +24,9 @@ const SectionBook = () => {
               />
             }
           />
-          <ComponentBook   />
+          <ComponentBook />
           <SubscribetoNewsletter />
-          <SimilarBook />
+          <SimilarBook title={'Similar Books'} />
         </div>
       </div>
     </section>

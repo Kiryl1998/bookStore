@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchCards } from '../../store/actions/NewBooksAction';
-import { RootState } from '../../store/store';
+import { RootState, store } from '../../store/store';
 
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
@@ -31,13 +31,11 @@ const SwiperSimilar = () => {
     dispatch(fetchCards());
   }, []);
 
-  const onClick = (isbn13: string) => {
+  const onClick = (isbn13: string, dispatch: typeof store.dispatch) => {
     navigation('/book/' + isbn13);
+    dispatch(fetchBook(isbn13));
   };
 
-  useEffect(() => {
-    dispatch(fetchBook(id));
-  }, [onClick]);
   return (
     <>
       <Swiper
@@ -48,7 +46,10 @@ const SwiperSimilar = () => {
         className="mySwiper"
       >
         {cards.sort().map((item: ICard) => (
-          <SwiperSlide key={item.isbn13} onClick={() => onClick(item.isbn13)}>
+          <SwiperSlide
+            key={item.isbn13}
+            onClick={() => onClick(item.isbn13, dispatch)}
+          >
             <Card
               image={item.image}
               title={item.title}
