@@ -1,0 +1,54 @@
+.Account {
+  padding: 70px 0px;
+}
+.container {
+  max-width: 1270px;
+  margin: auto;
+}
+.wrap {
+}
+.iconArrow {
+  font-size: 25px;
+  margin-bottom: 25px;
+}
+.title {
+  color: #313037;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 64px;
+  margin-bottom: 50px;
+}
+.profileTitle {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-top: 70px;
+}
+
+.formUser {
+}
+.wrapNameEmail {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.wrapName2Email {
+  display: block;
+}
+.input {
+  width: 600px;
+  padding: 14px 0px 14px 20px;
+  border: 1px solid #e7e7e7;
+}
+.wrapNewPassword {
+  display: flex;
+  justify-content: space-between;
+}
+.buttonFormUser {
+  display: flex;
+  justify-content: end;
+  border-top: 1px solid #e7e7e7;
+  margin-top: 70px;
+  padding-top: 50px;
+}

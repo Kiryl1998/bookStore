@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { styleInputForm } from '../../components/inputForm/inputForm';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { gitLocalSingIp } from '../../localStore/localSingIn';
+import { useState } from 'react';
 
 export interface singInForm {
   email: string;
@@ -15,6 +16,7 @@ export interface singInForm {
 
 const SingIN = () => {
   const navigation = useNavigate();
+  const [singIn, setSingIn] = useState(false);
 
   const { register, handleSubmit, reset } = useForm<singInForm>();
 
@@ -23,6 +25,12 @@ const SingIN = () => {
     reset();
     if (gitLocalSingIp(data)) {
       navigation('/');
+      localStorage.setItem(
+        'UserActive',
+        JSON.stringify({ ...data, activeUser: true })!
+      );
+    } else {
+      setSingIn(true);
     }
   };
 
@@ -47,6 +55,12 @@ const SingIN = () => {
                 sign Up
               </span>
             </div>
+            {singIn ? (
+              <h2 className={styleSingIn.singInTitle}>
+                The user does not exist
+              </h2>
+            ) : null}
+
             <form onSubmit={handleSubmit(submit)} className={styleSingIn.form}>
               <div className={styleInputForm.wrapInputForm}>
                 <label className={styleInputForm.label}>Name</label>

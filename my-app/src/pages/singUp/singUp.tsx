@@ -6,6 +6,7 @@ import { styleInputForm } from '../../components/inputForm/inputForm';
 import { useNavigate } from 'react-router-dom';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { setLocalSingUp } from '../../localStore/localSingUp';
+import { useState } from 'react';
 
 export interface myForm {
   name: string;
@@ -16,11 +17,28 @@ export interface myForm {
 
 const SingUp = () => {
   const navigation = useNavigate();
+  const [singUp, setSingUp] = useState(false);
+  const [notSingUp, setNotSingUp] = useState(false);
 
   const { register, handleSubmit, reset } = useForm<myForm>();
 
   const submit: SubmitHandler<myForm> = (data) => {
-    setLocalSingUp(data);
+    if (localStorage.getItem('User')) {
+      const local: myForm[] = JSON.parse(localStorage.getItem('User')!);
+      const existingUser = local.find((item) => item.email === data.email);
+      if (existingUser) {
+        setSingUp(false);
+        setNotSingUp(true);
+      } else {
+        setSingUp(true);
+        setNotSingUp(false);
+        setLocalSingUp(data);
+      }
+    } else {
+      setLocalSingUp(data);
+      setSingUp(!singUp);
+    }
+
     reset();
   };
 
@@ -45,6 +63,16 @@ const SingUp = () => {
                 sign Up
               </span>
             </div>
+            {singUp ? (
+              <h2 className={styleSingUp.titleRegistOk}>
+                Successful registration
+              </h2>
+            ) : null}
+            {notSingUp ? (
+              <h2 className={styleSingUp.titleRegist}>
+                The user with the same Email is already registered
+              </h2>
+            ) : null}
             <form onSubmit={handleSubmit(submit)} className={styleSingUp.form}>
               <div className={styleInputForm.wrapInputForm}>
                 <label className={styleInputForm.label}>Name</label>

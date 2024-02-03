@@ -2,7 +2,7 @@ import styleButton from './button.module.css';
 
 interface PropsButton {
   btnText: string;
-  type?: 'addToCart' | 'singIn' | 'total';
+  type?: 'addToCart' | 'singIn' | 'total' | 'Save changes' | 'Cancel';
   onClick?: () => void;
 }
 
@@ -15,6 +15,8 @@ const Button = (props: PropsButton) => {
         props.type == 'addToCart' && styleButton.addToCart,
         props.type == 'singIn' && styleButton.singIn,
         props.type == 'total' && styleButton.total,
+        props.type == 'Save changes' && styleButton.SaveChanges,
+        props.type == 'Cancel' && styleButton.Cancel,
       ].join(' ')}
     >
       {props.btnText}

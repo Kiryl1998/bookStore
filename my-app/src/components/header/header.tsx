@@ -15,9 +15,28 @@ import { useNavigate } from 'react-router-dom';
 import { handleInputSearch } from '../swiperGrid/search';
 import { useAppDispatch } from '../../store/hooks';
 
+export interface UserActive {
+  email: string;
+  password: string;
+  activeUser: boolean;
+}
+
 const Header = () => {
   const navigation = useNavigate();
   const dispatch = useAppDispatch();
+
+  const singInUser = () => {
+    const localActiveUser: UserActive = JSON.parse(
+      localStorage.getItem('UserActive')!
+    );
+    console.log(localActiveUser);
+    if (localActiveUser) {
+      navigation('/Account');
+    } else {
+      navigation('/SingIn');
+    }
+  };
+
   return (
     <header className={styleHeader.header}>
       <div className={styleHeader.container}>
@@ -59,7 +78,7 @@ const Header = () => {
             />
             <Icon
               onClick={() => {
-                navigation('/SingIn');
+                singInUser();
               }}
               icon={<FontAwesomeIcon icon={regularUser} />}
             />

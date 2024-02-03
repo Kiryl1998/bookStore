@@ -8,5 +8,7 @@ export const gitLocalSingIp = (user: singInForm) => {
   );
   if (existingUser) {
     return true;
+  } else {
+    return false;
   }
 };
