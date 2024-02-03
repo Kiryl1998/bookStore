@@ -6,7 +6,7 @@ import SingIn from './pages/singIn/singIn';
 import SingUp from './pages/singUp/singUp';
 import Basket from './pages/basket/basket';
 import Favorite from './pages/favorite/favorite';
-import Search from './pages/search/search';
+import Account from './pages/account/account';
 
 function App() {
   return (
@@ -19,7 +19,8 @@ function App() {
           <Route path="SingUp" element={<SingUp />} />
           <Route path="Basket" element={<Basket />} />
           <Route path="Favorite" element={<Favorite />} />
-          <Route path="Search" element={<Main/>} />
+          <Route path="Search" element={<Main />} />
+          <Route path="Account" element={<Account />} />
         </Routes>
       </BrowserRouter>
     </div>

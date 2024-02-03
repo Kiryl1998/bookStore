@@ -1,19 +1,25 @@
 import styleInputForm from './inputForm.module.css';
+import { InputHTMLAttributes } from 'react';
 
 interface propsInputForm {
   label: string;
   placeholder: string;
-  subInput?:string
-  type:string
+  subInput?: string;
+  type: string;
 }
+interface propsInput extends InputHTMLAttributes<HTMLInputElement> {}
 
-const InputForm = (props: propsInputForm) => {
+const InputForm = (props: propsInputForm, input: propsInput) => {
   return (
     <div className={styleInputForm.wrapInputForm}>
       <label className={styleInputForm.label}>{props.label}</label>
-      <input  className={styleInputForm.input} placeholder={props.placeholder} type={props.type} />
+      <input
+        className={styleInputForm.input}
+        placeholder={props.placeholder}
+        type={props.type}
+      />
       <span className={styleInputForm.subInput}>{props.subInput}</span>
     </div>
   );
 };
-export default InputForm;
+export { InputForm, styleInputForm };

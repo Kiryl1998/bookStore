@@ -1,7 +1,7 @@
 import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 
-const Search = () => {
+const Account = () => {
   return (
     <>
       <Header />
@@ -9,4 +9,4 @@ const Search = () => {
     </>
   );
 };
-export default Search;
+export default Account;

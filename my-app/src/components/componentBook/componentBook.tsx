@@ -2,21 +2,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Button from '../button/button';
 import Tabs from '../tabs/tabs';
 import styleComponentBook from './componentBook.module.css';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+import { faChevronDown, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../icon/icon';
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchBook } from '../../store/actions/BookAction';
 import { RootState } from '../../store/store';
 import { Rating } from 'react-simple-star-rating';
-import { addBasket, count } from '../../store/actions/addBasket';
 import { setLocalCard } from '../../localStore/localStore';
 import {
   arrCardsFavorite,
   setLocalCardFavorite,
 } from '../../localStore/localStoreFavorite';
+import { log } from 'console';
 
 export interface IBook {
   authors: string;
@@ -53,6 +52,7 @@ const ComponentBook = () => {
   useEffect(() => {
     dispatch(fetchBook(id));
   }, []);
+
   return (
     <>
       <h1 className={styleComponentBook.title}>{bookContent.title}</h1>
@@ -64,8 +64,8 @@ const ComponentBook = () => {
             }}
             icon={
               <FontAwesomeIcon
-                icon={regularHeart}
-                className={styleComponentBook.likeImg}
+                icon={faHeart}
+                className={[styleComponentBook.likeImg].join(' ')}
               />
             }
           />

@@ -26,6 +26,9 @@
   right: 0;
   top: 0;
 }
+.likeImgActive {
+  color: red;
+}
 .img {
   width: 100%;
   height: 100%;
@@ -76,6 +79,6 @@
   text-align: center;
   display: inline-block;
 }
-.wrapDescription{
+.wrapDescription {
   margin-top: 50px;
 }
