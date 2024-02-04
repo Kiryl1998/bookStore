@@ -33,8 +33,9 @@
   justify-content: space-between;
   margin-top: 20px;
 }
-.wrapName2Email {
+.wrapPassword {
   display: block;
+  margin-top: 20px;
 }
 .input {
   width: 600px;

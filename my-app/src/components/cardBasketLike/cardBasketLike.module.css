@@ -51,6 +51,13 @@
 }
 .icon {
   font-size: 24px;
+  transition: 0.2;
+}
+.iconClose {
+  font-size: 24px;
+}
+.iconClose:hover {
+  color: #fc857f;
 }
 .count {
   font-size: 24px;

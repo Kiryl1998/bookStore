@@ -66,7 +66,7 @@ const SectionAccount = () => {
 
           <h2 className={styleAccountUser.profileTitle}>Password</h2>
 
-          <div className={styleAccountUser.wrapName2Email}>
+          <div className={styleAccountUser.wrapPassword}>
             <div className={styleInputForm.wrapInputForm}>
               <label className={styleInputForm.label}>Password</label>
               <input

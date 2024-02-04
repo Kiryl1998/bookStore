@@ -121,7 +121,7 @@ const CardBasketLike = () => {
               icon={
                 <FontAwesomeIcon
                   icon={faXmark}
-                  className={styleCardBasketLike.icon}
+                  className={styleCardBasketLike.iconClose}
                 />
               }
             />

@@ -4,6 +4,13 @@
   text-transform: uppercase;
   padding: 10px 40px;
   cursor: pointer;
+  transition: 0.2s;
+}
+.btn:hover {
+  background-color: #5b5a62;
+}
+.btn:active{
+  transform: scale(0.999);
 }
 .addToCart {
   width: 100%;
