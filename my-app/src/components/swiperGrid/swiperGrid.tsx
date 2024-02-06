@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -14,12 +14,13 @@ import './swiperGrid.css';
 import { Grid, Pagination, Navigation } from 'swiper/modules';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchCards } from '../../store/actions/NewBooksAction';
-import { RootState } from '../../store/store';
+import { RootState, store } from '../../store/store';
 import SwiperCore from 'swiper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Card, { ICard } from '../card/card';
 import { useNavigate } from 'react-router-dom';
+import { fetchBook } from '../../store/actions/BookAction';
 SwiperCore.use([Navigation]);
 
 export default function SwiperGrid() {
@@ -34,8 +35,9 @@ export default function SwiperGrid() {
     dispatch(fetchCards());
   }, []);
 
-  const onClick = (isbn13: string) => {
+  const onClick = (isbn13: string, dispatch: typeof store.dispatch) => {
     navigation('/book/' + isbn13);
+    dispatch(fetchBook(isbn13, JSON.parse(localStorage.getItem('Favorite')!)));
   };
 
   return (
@@ -69,7 +71,7 @@ export default function SwiperGrid() {
       >
         {cards.map((item: ICard) => (
           <SwiperSlide
-            onClick={() => onClick(item.isbn13)}
+            onClick={() => onClick(item.isbn13, dispatch)}
             key={item.isbn13}
           >
             <Card

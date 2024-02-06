@@ -2,7 +2,7 @@ import { IBook } from '../../components/componentBook/componentBook';
 
 export interface IActionBook {
   type: string;
-  payload: IBook;
+  payload: IBook | IBook[];
 }
 
 interface IState {
@@ -16,7 +16,11 @@ const initialState: IState = {
 export const bookReducer = (state = initialState, action: IActionBook) => {
   switch (action.type) {
     case 'SHOW_BOOK':
-      return { ...state, book: action.payload! };
+      return { ...state, book: { ...action.payload, favorite: false } };
+    case 'SET_LIKE':
+      return { ...state, book: { ...action.payload, favorite: true } };
+    case 'GET_LIKE':
+      return { ...state, book: { ...action.payload, favorite: false } };
     default:
       return state;
   }

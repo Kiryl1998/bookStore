@@ -9,7 +9,6 @@ export interface ICard {
   rating: string;
   isbn13: string;
 }
-
 const Card = (props: ICard) => {
   return (
     <>

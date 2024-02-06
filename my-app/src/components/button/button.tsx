@@ -1,4 +1,5 @@
 import styleButton from './button.module.css';
+import React from 'react';
 
 interface PropsButton {
   btnText: string;

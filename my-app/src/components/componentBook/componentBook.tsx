@@ -7,7 +7,11 @@ import Icon from '../icon/icon';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { fetchBook } from '../../store/actions/BookAction';
+import {
+  fetchBook,
+  getLikeCard,
+  setLikeCard,
+} from '../../store/actions/BookAction';
 import { RootState } from '../../store/store';
 import { Rating } from 'react-simple-star-rating';
 import { setLocalCard } from '../../localStore/localStore';
@@ -15,7 +19,6 @@ import {
   arrCardsFavorite,
   setLocalCardFavorite,
 } from '../../localStore/localStoreFavorite';
-import { log } from 'console';
 
 export interface IBook {
   authors: string;
@@ -50,9 +53,25 @@ const ComponentBook = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(fetchBook(id));
+    dispatch(fetchBook(id, JSON.parse(localStorage.getItem('Favorite')!)));
   }, []);
 
+  const setFavoriteCard = () => {
+    if (bookContent.favorite) {
+      dispatch(getLikeCard(bookContent));
+      const deleteFavoriteCard = (card: IBook) => {
+        const CloseCard = arrCardsFavorite().filter(
+          (item: IBook) => card.isbn13 != item.isbn13
+        );
+        localStorage.setItem('Favorite', JSON.stringify(CloseCard));
+      };
+
+      deleteFavoriteCard(bookContent);
+    } else {
+      dispatch(setLikeCard(bookContent));
+      setLocalCardFavorite({ ...bookContent, favorite: true });
+    }
+  };
   return (
     <>
       <h1 className={styleComponentBook.title}>{bookContent.title}</h1>
@@ -60,12 +79,17 @@ const ComponentBook = () => {
         <div className={styleComponentBook.wrapImgBook}>
           <Icon
             onClick={() => {
-              setLocalCardFavorite({ ...bookContent, favorite: true });
+              setFavoriteCard();
             }}
             icon={
               <FontAwesomeIcon
                 icon={faHeart}
-                className={[styleComponentBook.likeImg].join(' ')}
+                className={[
+                  styleComponentBook.likeImg,
+                  bookContent.favorite
+                    ? styleComponentBook.likeImgActive
+                    : null,
+                ].join(' ')}
               />
             }
           />

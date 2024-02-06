@@ -18,6 +18,7 @@ import { Navigation } from 'swiper/modules';
 import Card, { ICard } from '../card/card';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchBook } from '../../store/actions/BookAction';
+import { IBook } from '../componentBook/componentBook';
 
 const SwiperSimilar = () => {
   const navigation = useNavigate();
@@ -33,9 +34,8 @@ const SwiperSimilar = () => {
 
   const onClick = (isbn13: string, dispatch: typeof store.dispatch) => {
     navigation('/book/' + isbn13);
-    dispatch(fetchBook(isbn13));
+    dispatch(fetchBook(isbn13, JSON.parse(localStorage.getItem('Favorite')!)));
   };
-
   return (
     <>
       <Swiper

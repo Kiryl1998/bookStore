@@ -25,9 +25,13 @@
   background-color: black;
   right: 0;
   top: 0;
+  transition: 0.2s;
+}
+.likeImg:active {
+  transform: scale(0.98);
 }
 .likeImgActive {
-  color: red;
+  color: #fc857f;
 }
 .img {
   width: 100%;
