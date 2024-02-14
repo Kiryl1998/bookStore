@@ -1,0 +1,10 @@
+.wrap {
+  display: none;
+}
+@media screen and (max-width: 769px) {
+  .wrap {
+    display: block;
+    position: absolute;
+    
+  }
+}

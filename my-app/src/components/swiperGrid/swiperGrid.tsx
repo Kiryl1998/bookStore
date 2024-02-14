@@ -57,7 +57,6 @@ export default function SwiperGrid() {
         }}
         spaceBetween={20}
         simulateTouch={false}
-        slidesPerGroup={3}
         navigation={{ nextEl: '.button-next', prevEl: '.button-prev' }}
         pagination={{
           clickable: true,

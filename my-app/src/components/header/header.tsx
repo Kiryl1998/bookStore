@@ -3,6 +3,7 @@ import Icon from '../icon/icon';
 import Input from '../input/input';
 import styleHeader from './header.module.css';
 import {
+  faBars,
   faBasketShopping,
   faMagnifyingGlass,
 } from '@fortawesome/free-solid-svg-icons';
@@ -68,19 +69,43 @@ const Header = () => {
               onClick={() => {
                 navigation('/Favorite');
               }}
-              icon={<FontAwesomeIcon icon={regularHeart} />}
+              icon={
+                <FontAwesomeIcon
+                  icon={regularHeart}
+                  className={[styleHeader.iconHeader, styleHeader.none].join(
+                    ' '
+                  )}
+                />
+              }
             />
+
             <Icon
               onClick={() => {
                 navigation('/Basket');
               }}
-              icon={<FontAwesomeIcon icon={faBasketShopping} />}
+              icon={
+                <FontAwesomeIcon
+                  icon={faBasketShopping}
+                  className={styleHeader.iconHeader}
+                />
+              }
+            />
+            <FontAwesomeIcon
+              icon={faBars}
+              className={[styleHeader.iconHeader, styleHeader.active].join(' ')}
             />
             <Icon
               onClick={() => {
                 singInUser();
               }}
-              icon={<FontAwesomeIcon icon={regularUser} />}
+              icon={
+                <FontAwesomeIcon
+                  icon={regularUser}
+                  className={[styleHeader.iconHeader, styleHeader.none].join(
+                    ' '
+                  )}
+                />
+              }
             />
           </div>
         </div>

@@ -5,6 +5,7 @@
   margin-right: auto;
 }
 .swiper-slide {
+  width: auto;
   height: auto !important;
 }
 .swiper-pagination-bullet {
