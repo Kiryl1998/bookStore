@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="bookStore" element={<Main />} />
+          <Route path="/" element={<Main />} />
           <Route path="book/:id" element={<Book />} />
           <Route path="SingIn" element={<SingIn />} />
           <Route path="SingUp" element={<SingUp />} />
