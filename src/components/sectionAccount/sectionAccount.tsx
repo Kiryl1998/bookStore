@@ -29,7 +29,7 @@ const SectionAccount = () => {
         <div className={styleAccountUser.wrap}>
           <Icon
             onClick={() => {
-              navigation('/');
+              navigation('/bookStore');
             }}
             icon={
               <FontAwesomeIcon
@@ -47,7 +47,6 @@ const SectionAccount = () => {
               <label className={styleInputForm.label}>Name</label>
               <input
                 value={UserData?.name}
-                // {...register('name', { required: true })}
                 className={styleAccountUser.input}
                 type="text"
               />
@@ -57,7 +56,6 @@ const SectionAccount = () => {
               <label className={styleInputForm.label}>Email</label>
               <input
                 value={UserData?.email}
-                // {...register('email', { required: true })}
                 className={styleAccountUser.input}
                 type="text"
               />
@@ -71,7 +69,6 @@ const SectionAccount = () => {
               <label className={styleInputForm.label}>Password</label>
               <input
                 value={UserData?.password}
-                // {...register('name', { required: true })}
                 className={styleAccountUser.input}
                 type="password"
               />
@@ -80,7 +77,6 @@ const SectionAccount = () => {
               <div className={styleInputForm.wrapInputForm}>
                 <label className={styleInputForm.label}>New password</label>
                 <input
-                  // {...register('email', { required: true })}
                   className={styleAccountUser.input}
                   type="text"
                 />
@@ -88,7 +84,6 @@ const SectionAccount = () => {
               <div className={styleInputForm.wrapInputForm}>
                 <label className={styleInputForm.label}>Confirm password</label>
                 <input
-                  // {...register('email', { required: true })}
                   className={styleAccountUser.input}
                   type="text"
                 />

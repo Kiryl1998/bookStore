@@ -18,7 +18,7 @@ const SectionBasket = (props: PropsSectionBasket) => {
         <div className={styleSectionBasket.wrap}>
           <Icon
             onClick={() => {
-              navigation('/');
+              navigation('/bookStore');
             }}
             icon={
               <FontAwesomeIcon

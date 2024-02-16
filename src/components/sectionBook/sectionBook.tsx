@@ -15,7 +15,7 @@ const SectionBook = () => {
         <div className={styleSectionBook.wrap}>
           <Icon
             onClick={() => {
-              navigation('/');
+              navigation('/bookStore');
             }}
             icon={
               <FontAwesomeIcon

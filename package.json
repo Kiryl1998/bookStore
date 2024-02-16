@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Kiryl1998.github.io/",
+  "homepage": "https://Kiryl1998.github.io/bookStore",
   "dependencies": {
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",

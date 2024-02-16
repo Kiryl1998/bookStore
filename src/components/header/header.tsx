@@ -45,7 +45,7 @@ const Header = () => {
           <h2
             className={styleHeader.title}
             onClick={() => {
-              navigation('/');
+              navigation('/bookStore');
             }}
           >
             bookstore
