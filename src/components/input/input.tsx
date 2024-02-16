@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styleInput from './input.module.css';
 
 interface PropsInput {

@@ -5,7 +5,7 @@ import styleComponentBook from './componentBook.module.css';
 import { faChevronDown, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../icon/icon';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
   fetchBook,
