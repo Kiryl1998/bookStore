@@ -19,11 +19,24 @@
 }
 .wrapCards {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
 
   position: relative;
-  height: 1220px;
+  height: 1250px;
 }
 
-
+@media screen and (max-width: 900px) {
+  .wrapCards {
+    height: 950px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .wrapCards {
+    height: 2000px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .wrapCards {
+    height: 1850px;
+  }
+}

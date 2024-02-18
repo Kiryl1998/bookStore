@@ -19,3 +19,31 @@
 .wrapForm {
   display: flex;
 }
+
+@media screen and (max-width: 626px) {
+  .wrapForm {
+    display: block;
+  }
+  .wrap {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 426px) {
+  .wrapForm {
+    display: block;
+  }
+  .wrap {
+    padding: 10px;
+  }
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 40px;
+  }
+  .subTitle p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+}

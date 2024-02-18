@@ -1,5 +1,5 @@
 import styleSubscribetoNewsletter from './subscribetoNewsletter.module.css';
-import Input from '../input/input';
+import styleInput from '../input/input.module.css';
 import Button from '../button/button';
 
 const SubscribetoNewsletter = () => {
@@ -17,8 +17,12 @@ const SubscribetoNewsletter = () => {
         </div>
       </div>
       <form className={styleSubscribetoNewsletter.wrapForm}>
-        <Input placeholder={'Your email'} />
-        <Button btnText={'Subscribe'} />
+        <input
+          className={styleInput.input}
+          type="text"
+          placeholder="Your email"
+        />
+        <Button type='Subscribe' btnText={'Subscribe'} />
       </form>
     </div>
   );

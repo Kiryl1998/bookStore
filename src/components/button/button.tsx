@@ -3,7 +3,7 @@ import React from 'react';
 
 interface PropsButton {
   btnText: string;
-  type?: 'addToCart' | 'singIn' | 'total' | 'Save changes' | 'Cancel';
+  type?: 'addToCart' | 'singIn' | 'total' | 'Save changes' | 'Cancel'|'Subscribe';
   onClick?: () => void;
 }
 
@@ -18,6 +18,7 @@ const Button = (props: PropsButton) => {
         props.type == 'total' && styleButton.total,
         props.type == 'Save changes' && styleButton.SaveChanges,
         props.type == 'Cancel' && styleButton.Cancel,
+        props.type == 'Subscribe' && styleButton.Subscribe,
       ].join(' ')}
     >
       {props.btnText}

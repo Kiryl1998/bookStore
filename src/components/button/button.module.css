@@ -9,7 +9,7 @@
 .btn:hover {
   background-color: #5b5a62;
 }
-.btn:active{
+.btn:active {
   transform: scale(0.999);
 }
 .addToCart {
@@ -58,4 +58,11 @@
   border: 1px solid #e7e7e7;
   margin-left: 30px;
   font-size: 24px;
+}
+
+@media screen and (max-width: 626px) {
+  .Subscribe {
+    margin-top: 40px;
+    width: 100%;
+  }
 }

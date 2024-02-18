@@ -22,6 +22,7 @@ import Card, { ICard } from '../card/card';
 import { useNavigate } from 'react-router-dom';
 import { fetchBook } from '../../store/actions/BookAction';
 SwiperCore.use([Navigation]);
+SwiperCore.use([Pagination]);
 
 export default function SwiperGrid() {
   const navigation = useNavigate();
@@ -39,6 +40,22 @@ export default function SwiperGrid() {
     navigation('/book/' + isbn13);
     dispatch(fetchBook(isbn13, JSON.parse(localStorage.getItem('Favorite')!)));
   };
+  const breakpoints = {
+    320: {
+      slidesPerView: 1,
+      grid: { rows: 4 },
+    },
+    426: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+      grid: { rows: 4 },
+    },
+    769: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      grid: { rows: 2 },
+    },
+  };
 
   return (
     <>
@@ -50,12 +67,9 @@ export default function SwiperGrid() {
         <span>Next</span>
         <FontAwesomeIcon icon={faArrowRight} />
       </div>
+
       <Swiper
-        slidesPerView={3}
-        grid={{
-          rows: 2,
-        }}
-        spaceBetween={20}
+        breakpoints={breakpoints}
         simulateTouch={false}
         navigation={{ nextEl: '.button-next', prevEl: '.button-prev' }}
         pagination={{
