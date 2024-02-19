@@ -33,11 +33,15 @@ const BurgerWindow = ({
     );
     if (localActiveUser) {
       navigation('/Account');
-      setMask(!stateMask);
+      if (stateMask == true) {
+        setMask(!stateMask);
+      }
       setModal(!active);
     } else {
       navigation('/SingIn');
-      setMask(!stateMask);
+      if (stateMask == true) {
+        setMask(!stateMask);
+      }
       setModal(!active);
     }
   };
@@ -49,11 +53,15 @@ const BurgerWindow = ({
       localStorage.removeItem('UserActive');
       navigation('/SingIn');
       setModal(!active);
-      setMask(!stateMask);
+      if (stateMask == true) {
+        setMask(!stateMask);
+      }
     } else {
       navigation('/SingIn');
       setModal(!active);
-      setMask(!stateMask);
+      if (stateMask == true) {
+        setMask(!stateMask);
+      }
     }
   };
   return (
