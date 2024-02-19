@@ -1,9 +1,8 @@
-.swiper {
-  height: 1200px;
-  position: static;
-}
-.swiper-pagination-horizontal {
-  bottom: 0 !important;
+.navAndPag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
 .swiper-pagination-bullet {
   width: 30px;
@@ -26,10 +25,6 @@
   align-items: center;
   width: 55px;
   cursor: pointer;
-  position: absolute;
-  z-index: 100;
-  top: 99%;
-  left: 0;
 }
 .buttonNext {
   display: flex;
@@ -37,27 +32,10 @@
   align-items: center;
   width: 55px;
   cursor: pointer;
-  position: absolute;
-  top: 99%;
-  z-index: 100;
-  right: 0;
 }
-
-@media screen and (max-width: 900px) {
-  .swiper {
-    height: 870px;
-  }
+.pngStyle {
+  position: static;
 }
-@media screen and (max-width: 768px) {
-  .swiper {
-    height: 1900px;
-  }
-  .swiper-slide img{
-    object-fit: contain;
-  }
-}
-@media screen and (max-width: 768px) {
-  .swiper {
-    height: 1800px;
-  }
+.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+  transform: none;
 }

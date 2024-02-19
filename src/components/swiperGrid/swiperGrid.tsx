@@ -21,8 +21,6 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Card, { ICard } from '../card/card';
 import { useNavigate } from 'react-router-dom';
 import { fetchBook } from '../../store/actions/BookAction';
-SwiperCore.use([Navigation]);
-SwiperCore.use([Pagination]);
 
 export default function SwiperGrid() {
   const navigation = useNavigate();
@@ -47,7 +45,7 @@ export default function SwiperGrid() {
     },
     426: {
       slidesPerView: 2,
-      spaceBetween: 10,
+      spaceBetween: 20,
       grid: { rows: 4 },
     },
     769: {
@@ -59,20 +57,12 @@ export default function SwiperGrid() {
 
   return (
     <>
-      <div className={['button-prev', 'buttonPrev'].join(' ')}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-        <span>Prev</span>
-      </div>
-      <div className={['button-next', 'buttonNext'].join(' ')}>
-        <span>Next</span>
-        <FontAwesomeIcon icon={faArrowRight} />
-      </div>
-
       <Swiper
         breakpoints={breakpoints}
         simulateTouch={false}
         navigation={{ nextEl: '.button-next', prevEl: '.button-prev' }}
         pagination={{
+          el: '.swiper-pagination',
           clickable: true,
           dynamicBullets: true,
           renderBullet: function (index: number, className: string) {
@@ -98,6 +88,19 @@ export default function SwiperGrid() {
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="navAndPag">
+        <div className={['button-prev', 'buttonPrev'].join(' ')}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+          <span>Prev</span>
+        </div>
+
+        <div className={['swiper-pagination', 'pngStyle'].join(' ')}></div>
+
+        <div className={['button-next', 'buttonNext'].join(' ')}>
+          <span>Next</span>
+          <FontAwesomeIcon icon={faArrowRight} />
+        </div>
+      </div>
     </>
   );
 }

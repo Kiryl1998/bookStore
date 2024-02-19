@@ -1,7 +1,10 @@
 .tabs {
+  width: 100%;
 }
 .item {
+  width: 35%;
   display: flex;
+  justify-content: space-between;
 }
 .itemList {
   padding: 0 40px 24px;
@@ -9,7 +12,18 @@
   color: lightgray;
   cursor: pointer;
 }
-.itemList:first-child{
+.itemList:first-child {
   color: black;
   border-bottom: 1px solid black;
+}
+@media screen and (max-width: 769px) {
+  .itemList {
+    padding: 0 15px 24px;
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 426px) {
+  .item {
+    width: 100%;
+  }
 }

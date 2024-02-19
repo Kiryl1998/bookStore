@@ -24,19 +24,18 @@
   position: relative;
   height: 1250px;
 }
-
-@media screen and (max-width: 900px) {
-  .wrapCards {
-    height: 950px;
-  }
-}
 @media screen and (max-width: 769px) {
   .wrapCards {
-    height: 2000px;
+    height: 2200px;
   }
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 426px) {
   .wrapCards {
-    height: 1850px;
+    height: 2400px;
+  }
+}
+@media screen and (max-width: 426px) {
+  .title {
+    font-size: 35px;
   }
 }

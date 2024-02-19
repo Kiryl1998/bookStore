@@ -103,7 +103,7 @@ const ComponentBook = () => {
           <div className={styleComponentBook.wrapPriceRating}>
             <div className={styleComponentBook.price}>{bookContent.price}</div>
             <div className={styleComponentBook.rating}>
-              <Rating initialValue={Number(bookContent.rating)} />
+              <Rating size={30} className={styleComponentBook.rating} initialValue={Number(bookContent.rating)} />
             </div>
           </div>
           <div className={styleComponentBook.wrapItem}>
