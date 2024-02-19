@@ -6,6 +6,7 @@ interface propsInputForm {
   placeholder: string;
   subInput?: string;
   type: string;
+  variable?: 'account';
 }
 interface propsInput extends InputHTMLAttributes<HTMLInputElement> {}
 

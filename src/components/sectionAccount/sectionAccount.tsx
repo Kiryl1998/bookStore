@@ -43,7 +43,7 @@ const SectionAccount = () => {
         <h2 className={styleAccountUser.profileTitle}>Profile</h2>
         <form className={styleAccountUser.formUser}>
           <div className={styleAccountUser.wrapNameEmail}>
-            <div className={styleInputForm.wrapInputForm}>
+            <div className={styleInputForm.account}>
               <label className={styleInputForm.label}>Name</label>
               <input
                 value={UserData?.name}
@@ -52,7 +52,7 @@ const SectionAccount = () => {
               />
             </div>
 
-            <div className={styleInputForm.wrapInputForm}>
+            <div className={styleInputForm.account}>
               <label className={styleInputForm.label}>Email</label>
               <input
                 value={UserData?.email}
@@ -65,7 +65,7 @@ const SectionAccount = () => {
           <h2 className={styleAccountUser.profileTitle}>Password</h2>
 
           <div className={styleAccountUser.wrapPassword}>
-            <div className={styleInputForm.wrapInputForm}>
+            <div className={styleInputForm.account}>
               <label className={styleInputForm.label}>Password</label>
               <input
                 value={UserData?.password}
@@ -74,25 +74,19 @@ const SectionAccount = () => {
               />
             </div>
             <div className={styleAccountUser.wrapNewPassword}>
-              <div className={styleInputForm.wrapInputForm}>
+              <div className={styleInputForm.account}>
                 <label className={styleInputForm.label}>New password</label>
-                <input
-                  className={styleAccountUser.input}
-                  type="text"
-                />
+                <input className={styleAccountUser.input} type="text" />
               </div>
-              <div className={styleInputForm.wrapInputForm}>
+              <div className={styleInputForm.account}>
                 <label className={styleInputForm.label}>Confirm password</label>
-                <input
-                  className={styleAccountUser.input}
-                  type="text"
-                />
+                <input className={styleAccountUser.input} type="text" />
               </div>
             </div>
           </div>
           <div className={styleAccountUser.buttonFormUser}>
-            <Button type='Save changes' btnText={'Save changes'}></Button>
-            <Button type='Cancel' btnText={'Cancel'}></Button>
+            <Button type="Save changes" btnText={'Save changes'}></Button>
+            <Button type="Cancel" btnText={'Cancel'}></Button>
           </div>
         </form>
       </div>

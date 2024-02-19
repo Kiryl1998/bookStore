@@ -4,6 +4,7 @@
 .container {
   max-width: 1270px;
   margin: auto;
+  padding: 0px 20px;
 }
 .wrap {
 }
@@ -38,7 +39,7 @@
   margin-top: 20px;
 }
 .input {
-  width: 600px;
+  width: 100%;
   padding: 14px 0px 14px 20px;
   border: 1px solid #e7e7e7;
 }
@@ -52,4 +53,24 @@
   border-top: 1px solid #e7e7e7;
   margin-top: 70px;
   padding-top: 50px;
+}
+@media screen and (max-width: 769px) {
+  .wrapNameEmail {
+    flex-direction: column;
+  }
+  .wrapNewPassword {
+    flex-direction: column;
+  }
+  .buttonFormUser {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 459px) {
+  .title {
+    font-size: 32px;
+  }
+  .buttonFormUser {
+    flex-direction: column;
+    align-items: center;
+  }
 }

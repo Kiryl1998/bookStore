@@ -19,3 +19,15 @@
   margin-top: 10px;
   cursor: pointer;
 }
+.account {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  width: 45%;
+}
+
+@media screen and (max-width: 769px) {
+  .account{
+    width: 100%;
+  }
+}

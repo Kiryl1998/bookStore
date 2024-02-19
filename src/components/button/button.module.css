@@ -85,6 +85,11 @@
     margin-top: 25%;
   }
 }
+@media screen and (max-width: 459px) {
+  .Cancel {
+    margin: 24px 0px 0px 0px;
+  }
+}
 @media screen and (max-width: 426px) {
   .logOut {
     margin-top: 30%;

@@ -5,6 +5,7 @@
 .container {
   max-width: 1270px;
   margin: auto;
+  padding: 0px 20px;
 }
 .wrap {
   max-width: 550px;
