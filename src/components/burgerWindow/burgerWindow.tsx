@@ -33,8 +33,12 @@ const BurgerWindow = ({
     );
     if (localActiveUser) {
       navigation('/Account');
+      setMask(!stateMask);
+      setModal(!active);
     } else {
       navigation('/SingIn');
+      setMask(!stateMask);
+      setModal(!active);
     }
   };
   const handleLogUot = () => {
@@ -44,6 +48,12 @@ const BurgerWindow = ({
     if (localActiveUser) {
       localStorage.removeItem('UserActive');
       navigation('/SingIn');
+      setModal(!active);
+      setMask(!stateMask);
+    } else {
+      navigation('/SingIn');
+      setModal(!active);
+      setMask(!stateMask);
     }
   };
   return (
@@ -80,7 +90,9 @@ const BurgerWindow = ({
         }
       />
       <span
-        onClick={() => singInUser()}
+        onClick={() => {
+          singInUser();
+        }}
         className={styleBurgerWindow.buttonLink}
       >
         Account
@@ -92,6 +104,7 @@ const BurgerWindow = ({
         ].join(' ')}
         onClick={() => {
           navigation('/Favorite');
+          setMask(!stateMask);
         }}
       >
         Favorite
@@ -103,6 +116,7 @@ const BurgerWindow = ({
         ].join(' ')}
         onClick={() => {
           navigation('/Basket');
+          setMask(!stateMask);
         }}
       >
         Basket
@@ -110,13 +124,17 @@ const BurgerWindow = ({
       {localStorage.getItem('UserActive') ? (
         <Button
           type="logOut"
-          onClick={() => handleLogUot()}
+          onClick={() => {
+            handleLogUot();
+          }}
           btnText={'LOG UOT'}
         />
       ) : (
         <Button
           type="logOut"
-          onClick={() => navigation('/SingIn')}
+          onClick={() => {
+            handleLogUot();
+          }}
           btnText={'SING IN'}
         />
       )}
