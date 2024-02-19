@@ -14,7 +14,11 @@ export interface singInForm {
   password: string;
 }
 
-const SingIN = () => {
+interface PropsSingIn {
+  stateMask: boolean;
+  setMask: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const SingIN = ({ stateMask, setMask }: PropsSingIn) => {
   const navigation = useNavigate();
   const [singIn, setSingIn] = useState(false);
 
@@ -36,7 +40,7 @@ const SingIN = () => {
 
   return (
     <>
-      <Header />
+      <Header stateMask={stateMask} setMask={setMask} />
       <section className={styleSingIn.singIn}>
         <div className={styleSingIn.container}>
           <div className={styleSingIn.wrap}>

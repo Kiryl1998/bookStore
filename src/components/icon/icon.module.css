@@ -1,3 +1,16 @@
 .icon {
   cursor: pointer;
 }
+.headerModalIconInput {
+  display: none;
+}
+
+@media screen and (max-width: 769px) {
+  .crossWrap {
+    margin: auto;
+    max-width: 100%;
+    padding-bottom: 24.5px;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    margin-bottom: 56px;
+  }
+}

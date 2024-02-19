@@ -59,10 +59,34 @@
   margin-left: 30px;
   font-size: 24px;
 }
-
+.logOut {
+  width: 100%;
+}
 @media screen and (max-width: 626px) {
   .Subscribe {
     margin-top: 40px;
     width: 100%;
+  }
+  .logOut {
+    width: 100%;
+    color: rgb(49, 48, 55);
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+@media screen and (max-width: 769px) {
+  .logOut {
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    margin-top: 25%;
+  }
+}
+@media screen and (max-width: 426px) {
+  .logOut {
+    margin-top: 30%;
   }
 }

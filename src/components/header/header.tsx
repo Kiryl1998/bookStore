@@ -15,28 +15,24 @@ import styleInput from '../input/input.module.css';
 import { useNavigate } from 'react-router-dom';
 import { handleInputSearch } from '../swiperGrid/search';
 import { useAppDispatch } from '../../store/hooks';
+import BurgerWindow from '../burgerWindow/burgerWindow';
+import { useState } from 'react';
 
 export interface UserActive {
   email: string;
   password: string;
   activeUser: boolean;
 }
+interface PropsHeader {
+  stateMask: boolean;
+  setMask: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const Header = () => {
+const Header = ({ stateMask, setMask }: PropsHeader) => {
   const navigation = useNavigate();
   const dispatch = useAppDispatch();
 
-  const singInUser = () => {
-    const localActiveUser: UserActive = JSON.parse(
-      localStorage.getItem('UserActive')!
-    );
-    console.log(localActiveUser);
-    if (localActiveUser) {
-      navigation('/Account');
-    } else {
-      navigation('/SingIn');
-    }
-  };
+  const [modal, setModal] = useState(false);
 
   return (
     <header className={styleHeader.header}>
@@ -51,6 +47,7 @@ const Header = () => {
             bookstore
           </h2>
           <Input
+            variable="headerInput"
             onInput={(event) => handleInputSearch(event, navigation, dispatch)}
             placeholder={'Search'}
             icon={
@@ -91,12 +88,16 @@ const Header = () => {
               }
             />
             <FontAwesomeIcon
+              onClick={() => {
+                setModal(!modal);
+                setMask(!stateMask);
+              }}
               icon={faBars}
               className={[styleHeader.iconHeader, styleHeader.active].join(' ')}
             />
             <Icon
               onClick={() => {
-                singInUser();
+                setModal(!modal);
               }}
               icon={
                 <FontAwesomeIcon
@@ -107,6 +108,7 @@ const Header = () => {
                 />
               }
             />
+            <BurgerWindow active={modal} setModal={setModal} stateMask={stateMask} setMask={setMask} />
           </div>
         </div>
       </div>

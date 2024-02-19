@@ -18,8 +18,23 @@
   transform: translateY(-50%);
   right: 15px;
 }
+.modalInput {
+  display: none;
+}
 @media screen and (max-width: 950px) {
   .wrap {
     margin: 0px 15px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .headerInput {
+    display: none;
+  }
+
+  .modalInput {
+    display: block;
+    margin: auto;
+    width: 100%;
+    margin-bottom: 48px;
   }
 }

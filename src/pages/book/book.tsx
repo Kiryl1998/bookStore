@@ -2,10 +2,15 @@ import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import SectionBook from '../../components/sectionBook/sectionBook';
 
-const Book = () => {
+interface PropsBook {
+  stateMask: boolean;
+  setMask: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Book = ({ stateMask, setMask }: PropsBook) => {
   return (
     <>
-      <Header />
+      <Header stateMask={stateMask} setMask={setMask} />
       <SectionBook />
       <Footer />
     </>

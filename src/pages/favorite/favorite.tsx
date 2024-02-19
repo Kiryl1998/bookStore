@@ -3,10 +3,15 @@ import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import SectionBasket from '../../components/sectionBasket/sectionBasket';
 
-const Favorite = () => {
+interface PropsBasket {
+  stateMask: boolean;
+  setMask: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Favorite = ({ stateMask,setMask }: PropsBasket) => {
   return (
     <>
-      <Header />
+      <Header stateMask={stateMask} setMask={setMask} />
       <SectionBasket card={<CardFavorite />} />
       <Footer />
     </>

@@ -23,6 +23,7 @@
   width: 150px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 .iconHeader {
   font-size: 20px;
@@ -39,5 +40,8 @@
   }
   .active {
     display: block;
+  }
+  .wrapIcon {
+    position: static;
   }
 }
