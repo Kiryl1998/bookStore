@@ -36,11 +36,24 @@ const SwiperSimilar = () => {
     navigation('/book/' + isbn13);
     dispatch(fetchBook(isbn13, JSON.parse(localStorage.getItem('Favorite')!)));
   };
+
+  const breakpoints = {
+    320: {
+      slidesPerView: 1,
+    },
+    426: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    769: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+  };
   return (
     <>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
+        breakpoints={breakpoints}
         navigation={{ nextEl: '.button-next', prevEl: '.button-prev' }}
         modules={[Navigation]}
         className="mySwiper"
