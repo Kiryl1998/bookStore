@@ -1,13 +1,12 @@
 import { useNavigate } from 'react-router-dom';
-import CardBasketLike from '../cardBasketLike/cardBasketLike';
 import Icon from '../icon/icon';
 import styleSectionBasket from './sectionBasket.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
-import SimilarBook from '../similarBook/similarBook';
 
 interface PropsSectionBasket {
   card: JSX.Element;
+  swiper?: JSX.Element;
 }
 
 const SectionBasket = (props: PropsSectionBasket) => {
@@ -29,6 +28,7 @@ const SectionBasket = (props: PropsSectionBasket) => {
           />
           <h2 className={styleSectionBasket.title}>Your cart</h2>
           {props.card}
+          {props.swiper}
         </div>
       </div>
     </section>
