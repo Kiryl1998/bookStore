@@ -117,18 +117,6 @@ const BurgerWindow = ({
       >
         Favorite
       </span>
-      <span
-        className={[
-          styleBurgerWindow.buttonLink,
-          styleBurgerWindow.unActive,
-        ].join(' ')}
-        onClick={() => {
-          navigation('/Basket');
-          setMask(!stateMask);
-        }}
-      >
-        Basket
-      </span>
       {localStorage.getItem('UserActive') ? (
         <Button
           type="logOut"

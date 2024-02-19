@@ -36,7 +36,7 @@
 .textTotal {
   color: #313037;
   text-transform: uppercase;
-  font-size: 40px;
+  font-size: 35px;
   font-style: normal;
   font-weight: 700;
   line-height: 60px; /* 150% */
@@ -44,4 +44,9 @@
 }
 .textTotal:first-child {
   margin-left: 0px;
+}
+@media screen and (max-width: 426px) {
+  .wrapContent{
+    width: 100%;
+  }
 }

@@ -20,3 +20,8 @@
   line-height: 64px;
   margin-bottom: 50px; /* 114.286% */
 }
+@media screen and (max-width: 426px) {
+  .title {
+    font-size: 32px;
+  }
+}

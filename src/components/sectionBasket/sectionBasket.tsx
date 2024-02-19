@@ -29,7 +29,6 @@ const SectionBasket = (props: PropsSectionBasket) => {
           />
           <h2 className={styleSectionBasket.title}>Your cart</h2>
           {props.card}
-          <SimilarBook title={'Popular Books'} />
         </div>
       </div>
     </section>

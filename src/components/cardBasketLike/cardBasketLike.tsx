@@ -9,6 +9,7 @@ import Total from '../totalBasket/totalBasket';
 
 const CardBasketLike = () => {
   const [cards, setCards] = useState(arrCards);
+  
   const handleIncrement = (card: IBook) => {
     setCards(
       cards.map((item) =>
