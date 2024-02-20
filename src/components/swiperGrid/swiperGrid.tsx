@@ -27,7 +27,6 @@ export default function SwiperGrid() {
   const cards = useAppSelector(
     (RootReducer: RootState) => RootReducer.cardsReducer.cards
   );
-
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -59,7 +58,6 @@ export default function SwiperGrid() {
     <>
       <Swiper
         breakpoints={breakpoints}
-        simulateTouch={false}
         navigation={{ nextEl: '.button-next', prevEl: '.button-prev' }}
         pagination={{
           el: '.swiper-pagination',
@@ -72,7 +70,7 @@ export default function SwiperGrid() {
         modules={[Grid, Pagination, Navigation]}
         className="mySwiper"
       >
-        {cards.map((item: ICard) => (
+        {cards.slice(1).map((item: ICard) => (
           <SwiperSlide
             onClick={() => onClick(item.isbn13, dispatch)}
             key={item.isbn13}
@@ -91,7 +89,7 @@ export default function SwiperGrid() {
       <div className="navAndPag">
         <div className={['button-prev', 'buttonPrev'].join(' ')}>
           <FontAwesomeIcon icon={faArrowLeft} />
-          <span>Prev</span>
+          <span>Back</span>
         </div>
 
         <div className={['swiper-pagination', 'pngStyle'].join(' ')}></div>

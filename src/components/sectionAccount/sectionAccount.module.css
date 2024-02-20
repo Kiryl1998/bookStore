@@ -1,5 +1,5 @@
 .Account {
-  padding: 70px 20px;
+  padding: 50px 20px;
 }
 .container {
   max-width: 1270px;
@@ -18,12 +18,11 @@
   font-style: normal;
   font-weight: 700;
   line-height: 64px;
-  margin-bottom: 50px;
 }
 .profileTitle {
   font-size: 24px;
   text-transform: uppercase;
-  margin-top: 70px;
+  margin-top: 48px;
 }
 
 .formUser {
@@ -51,7 +50,7 @@
   display: flex;
   justify-content: end;
   border-top: 1px solid #e7e7e7;
-  margin-top: 70px;
+  margin-top: 50px;
   padding-top: 50px;
 }
 @media screen and (max-width: 769px) {
@@ -64,13 +63,13 @@
   .buttonFormUser {
     justify-content: center;
   }
+  .buttonFormUser {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 @media screen and (max-width: 459px) {
   .title {
     font-size: 32px;
-  }
-  .buttonFormUser {
-    flex-direction: column;
-    align-items: center;
   }
 }

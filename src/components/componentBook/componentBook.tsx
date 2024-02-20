@@ -5,7 +5,7 @@ import styleComponentBook from './componentBook.module.css';
 import { faChevronDown, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../icon/icon';
 import { useParams } from 'react-router-dom';
-import { useEffect} from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
   fetchBook,
@@ -52,6 +52,8 @@ const ComponentBook = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
 
+  // const [addCard, setAddCard] = useState('add to card');
+
   useEffect(() => {
     dispatch(fetchBook(id, JSON.parse(localStorage.getItem('Favorite')!)));
   }, []);
@@ -72,6 +74,7 @@ const ComponentBook = () => {
       setLocalCardFavorite({ ...bookContent, favorite: true });
     }
   };
+
   return (
     <>
       <h1 className={styleComponentBook.title}>{bookContent.title}</h1>
@@ -103,7 +106,11 @@ const ComponentBook = () => {
           <div className={styleComponentBook.wrapPriceRating}>
             <div className={styleComponentBook.price}>{bookContent.price}</div>
             <div className={styleComponentBook.rating}>
-              <Rating size={30} className={styleComponentBook.rating} initialValue={Number(bookContent.rating)} />
+              <Rating
+                size={30}
+                className={styleComponentBook.rating}
+                initialValue={Number(bookContent.rating)}
+              />
             </div>
           </div>
           <div className={styleComponentBook.wrapItem}>
@@ -136,10 +143,10 @@ const ComponentBook = () => {
           </div>
           <Button
             onClick={() => {
-              setLocalCard({ ...bookContent, count: 1 });
+              setLocalCard(bookContent);
             }}
-            type="addToCart"
-            btnText={'add to cart'}
+            variable="addToCart"
+            btnText={'add to card'}
           />
 
           <span className={styleComponentBook.previewBook}>Preview book</span>

@@ -87,7 +87,7 @@ const SingIN = ({ stateMask, setMask }: PropsSingIn) => {
                 />
               </div>
 
-              <Button type="singIn" btnText={'sign in'} />
+              <Button variable="singIn" btnText={'sign in'} />
             </form>
           </div>
         </div>

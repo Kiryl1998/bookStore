@@ -20,18 +20,15 @@
   display: flex;
 }
 
-@media screen and (max-width: 626px) {
+@media screen and (max-width: 769px) {
   .wrapForm {
-    display: block;
+    flex-direction: column;
   }
   .wrap {
     padding: 20px;
   }
 }
 @media screen and (max-width: 426px) {
-  .wrapForm {
-    display: block;
-  }
   .wrap {
     padding: 10px;
   }

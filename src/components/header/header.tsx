@@ -34,6 +34,17 @@ const Header = ({ stateMask, setMask }: PropsHeader) => {
 
   const [modal, setModal] = useState(false);
 
+  const singInUser = () => {
+    const localActiveUser: UserActive = JSON.parse(
+      localStorage.getItem('UserActive')!
+    );
+    if (localActiveUser) {
+      navigation('/Account');
+    } else {
+      navigation('/SingIn');
+    }
+  };
+
   return (
     <header className={styleHeader.header}>
       <div className={styleHeader.container}>
@@ -63,15 +74,14 @@ const Header = ({ stateMask, setMask }: PropsHeader) => {
           />
           <div className={styleHeader.wrapIcon}>
             <Icon
+              variable="Heart"
               onClick={() => {
                 navigation('/Favorite');
               }}
               icon={
                 <FontAwesomeIcon
                   icon={regularHeart}
-                  className={[styleHeader.iconHeader, styleHeader.none].join(
-                    ' '
-                  )}
+                  className={styleHeader.iconHeader}
                 />
               }
             />
@@ -87,28 +97,32 @@ const Header = ({ stateMask, setMask }: PropsHeader) => {
                 />
               }
             />
-            <FontAwesomeIcon
+            {/* <FontAwesomeIcon
               onClick={() => {
                 setModal(!modal);
                 setMask(!stateMask);
               }}
               icon={faBars}
               className={[styleHeader.iconHeader, styleHeader.active].join(' ')}
-            />
+            /> */}
             <Icon
+              variable="UserHeader"
               onClick={() => {
-                setModal(!modal);
+                singInUser();
               }}
               icon={
                 <FontAwesomeIcon
                   icon={regularUser}
-                  className={[styleHeader.iconHeader, styleHeader.none].join(
-                    ' '
-                  )}
+                  className={styleHeader.iconHeader}
                 />
               }
             />
-            <BurgerWindow active={modal} setModal={setModal} stateMask={stateMask} setMask={setMask} />
+            {/* <BurgerWindow
+              active={modal}
+              setModal={setModal}
+              stateMask={stateMask}
+              setMask={setMask}
+            /> */}
           </div>
         </div>
       </div>

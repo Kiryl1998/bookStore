@@ -23,6 +23,17 @@ const SectionAccount = () => {
     );
     return UserData;
   };
+
+  const handleLogUot = () => {
+    const localActiveUser: UserActive = JSON.parse(
+      localStorage.getItem('UserActive')!
+    );
+    if (localActiveUser) {
+      localStorage.removeItem('UserActive');
+      navigation('/SingIn');
+    }
+  };
+
   return (
     <section className={styleAccountUser.Account}>
       <div className={styleAccountUser.container}>
@@ -85,8 +96,15 @@ const SectionAccount = () => {
             </div>
           </div>
           <div className={styleAccountUser.buttonFormUser}>
-            <Button type="Save changes" btnText={'Save changes'}></Button>
-            <Button type="Cancel" btnText={'Cancel'}></Button>
+            <Button variable="Save changes" btnText={'Save changes'}></Button>
+            <Button variable="Cancel" btnText={'Cancel'}></Button>
+            <Button
+              variable="logOut"
+              onClick={() => {
+                handleLogUot();
+              }}
+              btnText={'Log out'}
+            />
           </div>
         </form>
       </div>

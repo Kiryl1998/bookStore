@@ -1,10 +1,17 @@
 import styleButton from './button.module.css';
-import React from 'react';
 
 interface PropsButton {
   btnText: string;
-  type?: 'addToCart' | 'singIn' | 'total' | 'Save changes' | 'Cancel'|'Subscribe'|'logOut';
+  variable?:
+    | 'addToCart'
+    | 'singIn'
+    | 'total'
+    | 'Save changes'
+    | 'Cancel'
+    | 'Subscribe'
+    | 'logOut';
   onClick?: () => void;
+  type?: string;
 }
 
 const Button = (props: PropsButton) => {
@@ -13,13 +20,13 @@ const Button = (props: PropsButton) => {
       onClick={props.onClick}
       className={[
         styleButton.btn,
-        props.type == 'addToCart' && styleButton.addToCart,
-        props.type == 'singIn' && styleButton.singIn,
-        props.type == 'total' && styleButton.total,
-        props.type == 'Save changes' && styleButton.SaveChanges,
-        props.type == 'Cancel' && styleButton.Cancel,
-        props.type == 'Subscribe' && styleButton.Subscribe,
-        props.type == 'logOut' && styleButton.logOut,
+        props.variable == 'addToCart' && styleButton.addToCart,
+        props.variable == 'singIn' && styleButton.singIn,
+        props.variable == 'total' && styleButton.total,
+        props.variable == 'Save changes' && styleButton.SaveChanges,
+        props.variable == 'Cancel' && styleButton.Cancel,
+        props.variable == 'Subscribe' && styleButton.Subscribe,
+        props.variable == 'logOut' && styleButton.logOut,
       ].join(' ')}
     >
       {props.btnText}

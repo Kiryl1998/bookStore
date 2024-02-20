@@ -1,10 +1,14 @@
 .btn {
   background-color: black;
-  color: white;
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
   padding: 10px 40px;
   cursor: pointer;
   transition: 0.2s;
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
 }
 .btn:hover {
   background-color: #5b5a62;
@@ -17,15 +21,9 @@
   margin-bottom: 40px;
   color: #fff;
   text-align: center;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 1.2px;
 }
 .singIn {
   width: 100%;
-  color: #fff;
   text-align: center;
   font-size: 24px;
   font-style: normal;
@@ -36,62 +34,46 @@
 }
 .total {
   width: 100%;
-  color: #fff;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 1.2px;
 }
 .SaveChanges {
-  width: 300px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  font-size: 24px;
+  width: 230px;
+  padding: 10px 10px;
+  text-align: center;
 }
+
 .Cancel {
-  width: 300px;
-  color: black;
-  letter-spacing: 1.2px;
-  font-weight: 700;
+  padding: 10px 10px;
+  width: 230px;
+  color: rgb(49, 48, 55);
   background-color: transparent;
   border: 1px solid #e7e7e7;
-  margin-left: 30px;
-  font-size: 24px;
+  margin-left: 20px;
 }
 .logOut {
-  width: 100%;
+  padding: 10px 10px;
+  width: 230px;
+  color: rgb(49, 48, 55);
+  background-color: transparent;
+  border: 1px solid #e7e7e7;
+  margin-left: 20px;
 }
-@media screen and (max-width: 626px) {
-  .Subscribe {
-    margin-top: 40px;
-    width: 100%;
+
+@media screen and (max-width: 769px) and (hover: none) {
+  .btn:active {
+    background-color: #5b5a62;
   }
   .logOut {
     width: 100%;
-    color: rgb(49, 48, 55);
-    text-align: center;
-    font-size: 18px;
-    font-weight: 700;
+    margin: 20px 0px 0px 0px;
   }
-}
-@media screen and (max-width: 769px) {
-  .logOut {
-    color: rgb(255, 255, 255);
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 24px;
-    text-align: center;
-    margin-top: 25%;
+  .SaveChanges {
+    width: 100%;
   }
-}
-@media screen and (max-width: 459px) {
   .Cancel {
+    width: 100%;
     margin: 24px 0px 0px 0px;
   }
-}
-@media screen and (max-width: 426px) {
-  .logOut {
-    margin-top: 30%;
+  .Subscribe {
+    margin-top: 20px;
   }
 }

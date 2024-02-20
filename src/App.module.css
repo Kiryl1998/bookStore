@@ -1,6 +1,7 @@
 .App {
   background-color: white;
   position: relative;
+  font-family: 'Bebas Neue';
 }
 
 @media screen and (max-width: 769px) {

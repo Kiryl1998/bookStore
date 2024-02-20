@@ -6,6 +6,7 @@ import SubscribetoNewsletter from '../subscribetoNewsletter/subscribetoNewslette
 import ComponentBook from '../componentBook/componentBook';
 import SimilarBook from '../similarBook/similarBook';
 import { useNavigate } from 'react-router-dom';
+import { SetStateAction, useState } from 'react';
 const SectionBook = () => {
   const navigation = useNavigate();
 

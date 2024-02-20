@@ -22,7 +22,7 @@ const SubscribetoNewsletter = () => {
           type="text"
           placeholder="Your email"
         />
-        <Button type='Subscribe' btnText={'Subscribe'} />
+        <Button variable='Subscribe' btnText={'Subscribe'} />
       </form>
     </div>
   );

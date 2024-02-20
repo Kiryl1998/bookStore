@@ -1,6 +1,7 @@
 .header {
   background-color: white;
-  padding: 20px;
+  padding: 20px 20px 0px 20px;
+  position: relative;
 }
 .container {
   max-width: 1270px;
@@ -11,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #e7e7e7;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 }
 .title {
   font-size: 29px;
@@ -32,16 +33,13 @@
   display: none;
 }
 @media screen and (max-width: 769px) {
-  .header {
-    padding: 20px;
-  }
-  .none {
-    display: none;
-  }
-  .active {
-    display: block;
+  .wrap {
+    padding-bottom: 40px;
   }
   .wrapIcon {
-    position: static;
+    margin-left: 20px;
+  }
+  .title {
+    font-size: 25px;
   }
 }

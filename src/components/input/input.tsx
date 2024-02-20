@@ -20,7 +20,8 @@ const Input = (props: PropsInput) => {
         onInput={props.onInput}
         placeholder={props.placeholder}
         className={[
-          styleInput.input
+          styleInput.input,
+          props.variable == 'headerInput' && styleInput.inputHeader,
         ].join(' ')}
         type="text"
       />

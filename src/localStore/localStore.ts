@@ -10,6 +10,9 @@ export const setLocalCard = (card: IBook) => {
     (item: IBook) => item.isbn13 === card.isbn13
   );
   if (!existingItem) {
-    localStorage.setItem('Basket', JSON.stringify([...arrCards(), card]));
+    localStorage.setItem(
+      'Basket',
+      JSON.stringify([...arrCards(), { ...card, count: 1 }])
+    );
   }
 };

@@ -6,8 +6,14 @@ export interface ICard {
   title: string;
   subtitle: string;
   price: string;
-  rating: string;
+  rating: number;
   isbn13: string;
+}
+
+function getRandomIntInclusive(min: number, max: number) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 const Card = (props: ICard) => {
   return (
@@ -18,12 +24,12 @@ const Card = (props: ICard) => {
         </div>
         <h3 className={styleCard.title}>{props.title}</h3>
         <div className={styleCard.subTitle}>
-          <p>{props.subtitle}</p>
+          <p>{`${props.subtitle.slice(0, 45)}...`}</p>
         </div>
         <div className={styleCard.wrapPriceRating}>
           <div className={styleCard.price}>{props.price}</div>
           <div className={styleCard.rating}>
-            <RatingStart rating={+props.rating} />
+            <RatingStart rating={getRandomIntInclusive(3,5)} />
           </div>
         </div>
       </div>

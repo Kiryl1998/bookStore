@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
 }
 .swiper-pagination-bullet {
   width: 30px;
@@ -38,4 +37,13 @@
 }
 .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
   transform: none;
+}
+.swiper-pagination-bullet {
+  background: transparent;
+  color: rgb(168, 168, 168);
+}
+.swiper-pagination-bullet-active {
+  border: 2px solid rgb(49, 48, 55);
+  color: rgb(49, 48, 55);
+  font-size: 24px;
 }

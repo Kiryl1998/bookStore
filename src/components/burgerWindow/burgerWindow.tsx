@@ -119,7 +119,7 @@ const BurgerWindow = ({
       </span>
       {localStorage.getItem('UserActive') ? (
         <Button
-          type="logOut"
+        variable="logOut"
           onClick={() => {
             handleLogUot();
           }}
@@ -127,7 +127,7 @@ const BurgerWindow = ({
         />
       ) : (
         <Button
-          type="logOut"
+        variable="logOut"
           onClick={() => {
             handleLogUot();
           }}

@@ -10,7 +10,7 @@
 }
 .title {
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   cursor: default;
   font-weight: 700;
   font-size: 40px;
@@ -18,24 +18,29 @@
   font-style: normal;
 }
 .wrapCards {
-  display: flex;
-  flex-direction: column;
-
+  height: 1200px;
   position: relative;
-  height: 1250px;
 }
 @media screen and (max-width: 769px) {
   .wrapCards {
     height: 2200px;
   }
 }
-@media screen and (max-width: 426px) {
+@media screen and (max-width: 669px) {
   .wrapCards {
-    height: 2400px;
+    height: 2100px;
+  }
+}
+@media screen and (max-width: 554px) {
+  .wrapCards {
+    height: 2000px;
   }
 }
 @media screen and (max-width: 426px) {
-  .title {
-    font-size: 35px;
+  .wrapCards {
+    height: 2100px;
   }
+}
+.title {
+  font-size: 44px;
 }

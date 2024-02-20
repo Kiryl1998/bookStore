@@ -3,10 +3,10 @@ import SwiperSimilar from '../swiperSimilar/swiperSimilar';
 import styleSimilarBook from './similarBook.module.css';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-interface propsSimilarBook{
-  title:string
+interface propsSimilarBook {
+  title: string;
 }
-const SimilarBook = (props:propsSimilarBook) => {
+const SimilarBook = (props: propsSimilarBook) => {
   return (
     <>
       <div className={styleSimilarBook.wrapTitleNav}>
