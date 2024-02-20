@@ -15,11 +15,7 @@ export interface myForm {
   'Confirm password': string;
 }
 
-interface PropsSingUp {
-  stateMask: boolean;
-  setMask: React.Dispatch<React.SetStateAction<boolean>>;
-}
-const SingUp = ({ stateMask, setMask }: PropsSingUp) => {
+const SingUp = () => {
   const navigation = useNavigate();
   const [singUp, setSingUp] = useState(false);
   const [notSingUp, setNotSingUp] = useState(false);
@@ -48,7 +44,6 @@ const SingUp = ({ stateMask, setMask }: PropsSingUp) => {
 
   return (
     <>
-      <Header stateMask={stateMask} setMask={setMask} />
       <section className={styleSingUp.singUp}>
         <div className={styleSingUp.container}>
           <div className={styleSingUp.wrap}>
@@ -124,7 +119,6 @@ const SingUp = ({ stateMask, setMask }: PropsSingUp) => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

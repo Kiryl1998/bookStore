@@ -23,12 +23,8 @@ export interface UserActive {
   password: string;
   activeUser: boolean;
 }
-interface PropsHeader {
-  stateMask: boolean;
-  setMask: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-const Header = ({ stateMask, setMask }: PropsHeader) => {
+const Header = () => {
   const navigation = useNavigate();
   const dispatch = useAppDispatch();
 

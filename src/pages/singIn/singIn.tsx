@@ -13,12 +13,7 @@ export interface singInForm {
   email: string;
   password: string;
 }
-
-interface PropsSingIn {
-  stateMask: boolean;
-  setMask: React.Dispatch<React.SetStateAction<boolean>>;
-}
-const SingIN = ({ stateMask, setMask }: PropsSingIn) => {
+const SingIN = () => {
   const navigation = useNavigate();
   const [singIn, setSingIn] = useState(false);
 
@@ -40,7 +35,6 @@ const SingIN = ({ stateMask, setMask }: PropsSingIn) => {
 
   return (
     <>
-      <Header stateMask={stateMask} setMask={setMask} />
       <section className={styleSingIn.singIn}>
         <div className={styleSingIn.container}>
           <div className={styleSingIn.wrap}>
@@ -92,7 +86,6 @@ const SingIN = ({ stateMask, setMask }: PropsSingIn) => {
           </div>
         </div>
       </section>
-      <Footer />
     </>
   );
 };

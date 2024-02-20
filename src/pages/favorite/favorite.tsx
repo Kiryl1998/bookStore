@@ -4,20 +4,13 @@ import Header from '../../components/header/header';
 import SectionBasket from '../../components/sectionBasket/sectionBasket';
 import SimilarBook from '../../components/similarBook/similarBook';
 
-interface PropsBasket {
-  stateMask: boolean;
-  setMask: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const Favorite = ({ stateMask, setMask }: PropsBasket) => {
+const Favorite = () => {
   return (
     <>
-      <Header stateMask={stateMask} setMask={setMask} />
       <SectionBasket
         card={<CardFavorite />}
         swiper={<SimilarBook title={'Popular Books'} />}
       />
-      <Footer />
     </>
   );
 };

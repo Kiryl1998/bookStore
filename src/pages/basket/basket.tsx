@@ -3,17 +3,12 @@ import Footer from '../../components/footer/footer';
 import Header from '../../components/header/header';
 import SectionBasket from '../../components/sectionBasket/sectionBasket';
 
-interface PropsBasket {
-  stateMask: boolean;
-  setMask: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
-const Basket = ({ stateMask, setMask }: PropsBasket) => {
+
+const Basket = () => {
   return (
     <>
-      <Header stateMask={stateMask} setMask={setMask} />
       <SectionBasket card={<CardBasketLike />} />
-      <Footer />
     </>
   );
 };

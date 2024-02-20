@@ -9,47 +9,18 @@ import Basket from './pages/basket/basket';
 import Favorite from './pages/favorite/favorite';
 import Account from './pages/account/account';
 import { useState } from 'react';
+import AppRoutes from './components/Routes/Routes';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
 
 function App() {
-  const [mask, setMask] = useState(false);
   return (
-    <div className={[style.App, mask ? style.active : null].join(' ')}>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="bookStore"
-            element={<Main stateMask={mask} setMask={setMask} />}
-          />
-          <Route
-            path="book/:id"
-            element={<Book stateMask={mask} setMask={setMask} />}
-          />
-          <Route
-            path="SingIn"
-            element={<SingIn stateMask={mask} setMask={setMask} />}
-          />
-          <Route
-            path="SingUp"
-            element={<SingUp stateMask={mask} setMask={setMask} />}
-          />
-          <Route
-            path="Basket"
-            element={<Basket stateMask={mask} setMask={setMask} />}
-          />
-          <Route
-            path="Favorite"
-            element={<Favorite stateMask={mask} setMask={setMask} />}
-          />
-          <Route
-            path="Search"
-            element={<Main stateMask={mask} setMask={setMask} />}
-          />
-          <Route
-            path="Account"
-            element={<Account stateMask={mask} setMask={setMask} />}
-          />
-        </Routes>
-      </BrowserRouter>
+    <div className={[style.App].join(' ')}>
+      <Header />
+      <div className="container">
+        <AppRoutes />
+      </div>
+      <Footer />
     </div>
   );
 }
