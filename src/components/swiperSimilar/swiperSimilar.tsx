@@ -58,7 +58,7 @@ const SwiperSimilar = () => {
         modules={[Navigation]}
         className="mySwiper"
       >
-        {cards.sort().map((item: ICard) => (
+        {cards.slice(1).sort().map((item: ICard) => (
           <SwiperSlide
             key={item.isbn13}
             onClick={() => onClick(item.isbn13, dispatch)}
