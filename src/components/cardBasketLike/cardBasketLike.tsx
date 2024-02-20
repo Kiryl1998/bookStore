@@ -6,10 +6,20 @@ import Icon from '../icon/icon';
 import { useEffect, useState } from 'react';
 import { arrCards } from '../../localStore/localStore';
 import Total from '../totalBasket/totalBasket';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { rootReducer } from '../../store/rootReducer';
+import {
+  delBasketCountIcon,
+  iconBasketIcon,
+} from '../../store/actions/countIconBasket';
 
 const CardBasketLike = () => {
   const [cards, setCards] = useState(arrCards);
-  
+  const countBasketIcon = useAppSelector(
+    (rootReducer) => rootReducer.reducerIconCountBasket
+  );
+  const dispatch = useAppDispatch();
+
   const handleIncrement = (card: IBook) => {
     setCards(
       cards.map((item) =>
@@ -51,8 +61,12 @@ const CardBasketLike = () => {
 
   const handleClickClose = (card: IBook) => {
     setCards(cards.filter((item) => card.isbn13 !== item.isbn13));
-    const CloseCard = arrCards().filter((item: IBook) => card.isbn13 != item.isbn13);
+    const CloseCard = arrCards().filter(
+      (item: IBook) => card.isbn13 != item.isbn13
+    );
     localStorage.setItem('Basket', JSON.stringify(CloseCard));
+
+    dispatch(delBasketCountIcon(card));
   };
 
   useEffect(() => {
@@ -134,3 +148,6 @@ const CardBasketLike = () => {
   );
 };
 export default CardBasketLike;
+function dispatch(arg0: iconBasketIcon) {
+  throw new Error('Function not implemented.');
+}

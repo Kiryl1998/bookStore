@@ -2,7 +2,7 @@ import styleIcon from './icon.module.css';
 interface PropsIcon {
   icon: JSX.Element;
   onClick?: () => void;
-  variable?: 'crossWrap' | 'UserHeader'|'Heart'|'Basket';
+  variable?: 'crossWrap' | 'UserHeader' | 'Heart' | 'Basket';
 }
 
 const Icon = (props: PropsIcon) => {

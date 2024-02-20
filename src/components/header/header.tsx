@@ -14,10 +14,11 @@ import {
 import styleInput from '../input/input.module.css';
 import { useNavigate } from 'react-router-dom';
 import { handleInputSearch } from '../swiperGrid/search';
-import { useAppDispatch } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import BurgerWindow from '../burgerWindow/burgerWindow';
 import { useState } from 'react';
 import BASKET from '../../img/basket.svg';
+import { IBook } from '../componentBook/componentBook';
 
 export interface UserActive {
   email: string;
@@ -29,7 +30,11 @@ const Header = () => {
   const navigation = useNavigate();
   const dispatch = useAppDispatch();
 
-  const [modal, setModal] = useState(false);
+  const arrCardBasketCount = useAppSelector(
+    (rootReducer) => rootReducer.reducerIconCountBasket
+  );
+
+  console.log(arrCardBasketCount);
 
   const singInUser = () => {
     const localActiveUser: UserActive = JSON.parse(
@@ -82,6 +87,18 @@ const Header = () => {
                 />
               }
             />
+
+            <span
+              className={[
+                styleHeader.countIconBasket,
+                arrCardBasketCount.length > 0
+                  ? styleHeader.noneCountBasket
+                  : '',
+              ].join(' ')}
+            >{`${
+              arrCardBasketCount.length > 0 ? arrCardBasketCount.length : ''
+            }`}</span>
+
             <Icon
               variable="Basket"
               onClick={() => {

@@ -5,7 +5,7 @@ import styleComponentBook from './componentBook.module.css';
 import { faChevronDown, faHeart } from '@fortawesome/free-solid-svg-icons';
 import Icon from '../icon/icon';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import {
   fetchBook,
@@ -14,11 +14,12 @@ import {
 } from '../../store/actions/BookAction';
 import { RootState } from '../../store/store';
 import { Rating } from 'react-simple-star-rating';
-import { setLocalCard } from '../../localStore/localStore';
+import { arrCards, setLocalCard } from '../../localStore/localStore';
 import {
   arrCardsFavorite,
   setLocalCardFavorite,
 } from '../../localStore/localStoreFavorite';
+import { addBasketCountIcon } from '../../store/actions/countIconBasket';
 
 export interface IBook {
   authors: string;
@@ -51,7 +52,6 @@ const ComponentBook = () => {
 
   const { id } = useParams();
   const dispatch = useAppDispatch();
-
 
   useEffect(() => {
     dispatch(fetchBook(id, JSON.parse(localStorage.getItem('Favorite')!)));
@@ -142,7 +142,7 @@ const ComponentBook = () => {
           </div>
           <Button
             onClick={() => {
-              setLocalCard(bookContent);
+              setLocalCard(bookContent,dispatch,addBasketCountIcon,bookContent);
             }}
             variable="addToCart"
             btnText={'add to card'}
