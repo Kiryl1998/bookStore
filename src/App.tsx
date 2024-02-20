@@ -17,9 +17,7 @@ function App() {
   return (
     <div className={[style.App].join(' ')}>
       <Header />
-      <div className="container">
-        <AppRoutes />
-      </div>
+      <AppRoutes />
       <Footer />
     </div>
   );

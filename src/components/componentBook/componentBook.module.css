@@ -18,11 +18,10 @@
   position: relative;
 }
 .likeImg {
-  font-size: 24px;
-  padding: 16px;
+  font-size: 30px;
+  padding: 10px;
   color: white;
   position: absolute;
-  background-color: black;
   right: 0;
   top: 0;
   transition: 0.2s;

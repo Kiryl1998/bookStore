@@ -68,7 +68,7 @@ const Header = () => {
               />
             }
           />
-          <div className={styleHeader.wrapIcon}>
+          <nav className={styleHeader.wrapIcon}>
             <Icon
               variable="Heart"
               onClick={() => {
@@ -119,7 +119,7 @@ const Header = () => {
               stateMask={stateMask}
               setMask={setMask}
             /> */}
-          </div>
+          </nav>
         </div>
       </div>
     </header>

@@ -1,6 +1,4 @@
 import styleSingIn from './singIn.module.css';
-import Footer from '../../components/footer/footer';
-import Header from '../../components/header/header';
 // import InputForm from '../../components/inputForm/inputForm';
 import Button from '../../components/button/button';
 import { useNavigate } from 'react-router-dom';

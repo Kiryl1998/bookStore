@@ -52,7 +52,6 @@ const ComponentBook = () => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
 
-  // const [addCard, setAddCard] = useState('add to card');
 
   useEffect(() => {
     dispatch(fetchBook(id, JSON.parse(localStorage.getItem('Favorite')!)));
