@@ -4,7 +4,7 @@
   text-transform: uppercase;
   padding: 10px 40px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.1s;
   font-size: 24px;
   font-weight: 700;
   font-style: normal;
@@ -14,7 +14,7 @@
   background-color: #5b5a62;
 }
 .btn:active {
-  transform: scale(0.999);
+  transform: scale(0.998);
 }
 .addToCart {
   width: 100%;

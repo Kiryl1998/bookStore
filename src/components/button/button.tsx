@@ -1,6 +1,6 @@
 import styleButton from './button.module.css';
 
-interface PropsButton {
+interface PropsButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   btnText: string;
   variable?:
     | 'addToCart'
@@ -11,12 +11,12 @@ interface PropsButton {
     | 'Subscribe'
     | 'logOut';
   onClick?: () => void;
-  type?: string;
 }
 
 const Button = (props: PropsButton) => {
   return (
     <button
+      type={props.type}
       onClick={props.onClick}
       className={[
         styleButton.btn,

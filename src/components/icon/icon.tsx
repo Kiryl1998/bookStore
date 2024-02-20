@@ -2,7 +2,7 @@ import styleIcon from './icon.module.css';
 interface PropsIcon {
   icon: JSX.Element;
   onClick?: () => void;
-  variable?: 'crossWrap' | 'UserHeader'|'Heart';
+  variable?: 'crossWrap' | 'UserHeader'|'Heart'|'Basket';
 }
 
 const Icon = (props: PropsIcon) => {
@@ -14,6 +14,7 @@ const Icon = (props: PropsIcon) => {
         props.variable == 'crossWrap' && styleIcon.crossWrap,
         props.variable == 'UserHeader' && styleIcon.User,
         props.variable == 'Heart' && styleIcon.Heart,
+        props.variable == 'Basket' && styleIcon.Basket,
       ].join(' ')}
     >
       {props.icon}

@@ -17,6 +17,7 @@ import { handleInputSearch } from '../swiperGrid/search';
 import { useAppDispatch } from '../../store/hooks';
 import BurgerWindow from '../burgerWindow/burgerWindow';
 import { useState } from 'react';
+import BASKET from '../../img/basket.svg';
 
 export interface UserActive {
   email: string;
@@ -81,26 +82,13 @@ const Header = () => {
                 />
               }
             />
-
             <Icon
+              variable="Basket"
               onClick={() => {
                 navigation('/Basket');
               }}
-              icon={
-                <FontAwesomeIcon
-                  icon={faBasketShopping}
-                  className={styleHeader.iconHeader}
-                />
-              }
+              icon={<img src={BASKET} alt="" />}
             />
-            {/* <FontAwesomeIcon
-              onClick={() => {
-                setModal(!modal);
-                setMask(!stateMask);
-              }}
-              icon={faBars}
-              className={[styleHeader.iconHeader, styleHeader.active].join(' ')}
-            /> */}
             <Icon
               variable="UserHeader"
               onClick={() => {
@@ -113,12 +101,6 @@ const Header = () => {
                 />
               }
             />
-            {/* <BurgerWindow
-              active={modal}
-              setModal={setModal}
-              stateMask={stateMask}
-              setMask={setMask}
-            /> */}
           </nav>
         </div>
       </div>

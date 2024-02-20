@@ -31,7 +31,7 @@ const Total = ({ stateCards }: propsTotal) => {
           <span className={styleTotal.textTotal}>Total:</span>
           <span className={styleTotal.textTotal}>{`$ ${total}`}</span>
         </div>
-        <Button variable={'total'} btnText={'check out'} />
+        <Button type="button" variable={'total'} btnText={'check out'} />
       </div>
     </form>
   );
