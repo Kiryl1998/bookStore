@@ -40,7 +40,7 @@ const SectionAccount = () => {
         <div className={styleAccountUser.wrap}>
           <Icon
             onClick={() => {
-              navigation('/bookStore');
+              navigation('/');
             }}
             icon={
               <FontAwesomeIcon

@@ -15,7 +15,6 @@ import { Grid, Pagination, Navigation } from 'swiper/modules';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { fetchCards } from '../../store/actions/NewBooksAction';
 import { RootState, store } from '../../store/store';
-import SwiperCore from 'swiper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import Card, { ICard } from '../card/card';

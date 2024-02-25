@@ -21,7 +21,7 @@ const SingIN = () => {
     gitLocalSingIp(data);
     reset();
     if (gitLocalSingIp(data)) {
-      navigation('/bookStore');
+      navigation('/');
       localStorage.setItem(
         'UserActive',
         JSON.stringify({ ...data, activeUser: true })!
