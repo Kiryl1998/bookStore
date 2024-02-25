@@ -10,14 +10,14 @@ import Account from '../../pages/account/account';
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="bookStore" element={<Main />} />
-      <Route path="book/:id" element={<Book />} />
-      <Route path="SingIn" element={<SingIn />} />
-      <Route path="SingUp" element={<SingUp />} />
-      <Route path="Basket" element={<Basket />} />
-      <Route path="Favorite" element={<Favorite />} />
-      <Route path="Search" element={<Main />} />
-      <Route path="Account" element={<Account />} />
+      <Route path="/bookStore" element={<Main />} />
+      <Route path="/book/:id" element={<Book />} />
+      <Route path="/SingIn" element={<SingIn />} />
+      <Route path="/SingUp" element={<SingUp />} />
+      <Route path="/Basket" element={<Basket />} />
+      <Route path="/Favorite" element={<Favorite />} />
+      <Route path="/Search" element={<Main />} />
+      <Route path="/Account" element={<Account />} />
     </Routes>
   );
 };
