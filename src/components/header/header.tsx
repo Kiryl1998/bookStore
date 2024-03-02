@@ -33,9 +33,7 @@ const Header = () => {
   const arrCardBasketCount = useAppSelector(
     (rootReducer) => rootReducer.reducerIconCountBasket
   );
-
-  console.log(arrCardBasketCount);
-
+  
   const singInUser = () => {
     const localActiveUser: UserActive = JSON.parse(
       localStorage.getItem('UserActive')!

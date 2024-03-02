@@ -15,7 +15,12 @@ const SingIN = () => {
   const navigation = useNavigate();
   const [singIn, setSingIn] = useState(false);
 
-  const { register, handleSubmit, reset } = useForm<singInForm>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<singInForm>();
 
   const submit: SubmitHandler<singInForm> = (data) => {
     gitLocalSingIp(data);
@@ -62,21 +67,37 @@ const SingIN = () => {
                 <label className={styleInputForm.label}>Name</label>
                 <input
                   {...register('email', { required: true })}
-                  className={styleInputForm.input}
+                  className={[
+                    styleInputForm.input,
+                    errors.email ? styleSingIn.errors : '',
+                  ].join(' ')}
                   placeholder="Your Email"
                   type="text"
                 />
+                {errors.email && (
+                  <span className={styleSingIn.textErrors}>
+                    Please enter your email
+                  </span>
+                )}
               </div>
 
               <div className={styleInputForm.wrapInputForm}>
                 <label className={styleInputForm.label}>Password</label>
                 <input
                   {...register('password', { required: true })}
-                  className={styleInputForm.input}
+                  className={[
+                    styleInputForm.input,
+                    errors.password ? styleSingIn.errors : '',
+                  ].join(' ')}
                   placeholder="Your password"
                   type="password"
                   minLength={5}
                 />
+                {errors.email && (
+                  <span className={styleSingIn.textErrors}>
+                    Please enter your password
+                  </span>
+                )}
               </div>
 
               <Button variable="singIn" btnText={'sign in'} />

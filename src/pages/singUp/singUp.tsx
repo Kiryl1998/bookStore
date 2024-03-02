@@ -7,6 +7,8 @@ import { useNavigate } from 'react-router-dom';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { setLocalSingUp } from '../../localStore/localSingUp';
 import { useState } from 'react';
+import { error } from 'console';
+import { getValue } from '@testing-library/user-event/dist/utils';
 
 export interface myForm {
   name: string;
@@ -20,7 +22,13 @@ const SingUp = () => {
   const [singUp, setSingUp] = useState(false);
   const [notSingUp, setNotSingUp] = useState(false);
 
-  const { register, handleSubmit, reset } = useForm<myForm>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    formState: { errors, isValid },
+  } = useForm<myForm>({ mode: 'onChange' });
 
   const submit: SubmitHandler<myForm> = (data) => {
     if (localStorage.getItem('User')) {
@@ -41,7 +49,7 @@ const SingUp = () => {
 
     reset();
   };
-
+  console.log(errors.email);
   return (
     <>
       <section className={styleSingUp.singUp}>
@@ -77,43 +85,80 @@ const SingUp = () => {
                 <label className={styleInputForm.label}>Name</label>
                 <input
                   {...register('name', { required: true })}
-                  className={styleInputForm.input}
+                  className={[
+                    styleInputForm.input,
+                    errors.name ? styleSingUp.errors : '',
+                  ].join(' ')}
                   placeholder="Your name"
                   type="text"
                 />
+                {errors.name && (
+                  <span className={styleSingUp.textErrors}>
+                    Your name is required
+                  </span>
+                )}
               </div>
-
               <div className={styleInputForm.wrapInputForm}>
                 <label className={styleInputForm.label}>Email</label>
                 <input
-                  {...register('email', { required: true })}
-                  className={styleInputForm.input}
+                  {...register('email', {
+                    required: true,
+                    pattern: {
+                      value:
+                        /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu,
+                      message: 'Please enter a valid email',
+                    },
+                  })}
+                  className={[
+                    styleInputForm.input,
+                    errors.email ? styleSingUp.errors : '',
+                  ].join(' ')}
                   placeholder="Your email"
                   type="text"
                 />
+                {errors.email && (
+                  <span className={styleSingUp.textErrors}>
+                    You must enter your email
+                  </span>
+                )}
               </div>
-
               <div className={styleInputForm.wrapInputForm}>
                 <label className={styleInputForm.label}>Password</label>
                 <input
                   {...register('password', { required: true })}
-                  className={styleInputForm.input}
+                  className={[
+                    styleInputForm.input,
+                    errors.password ? styleSingUp.errors : '',
+                  ].join(' ')}
                   placeholder="Your password"
                   type="password"
                   minLength={5}
                 />
+                {errors.password && (
+                  <span className={styleSingUp.textErrors}>
+                    Please create a password
+                  </span>
+                )}
               </div>
-
               <div className={styleInputForm.wrapInputForm}>
                 <label className={styleInputForm.label}>Confirm password</label>
                 <input
-                  {...register('Confirm password', { required: true })}
-                  className={styleInputForm.input}
+                  {...register('Confirm password', {
+                    required: true,
+                  })}
+                  className={[
+                    styleInputForm.input,
+                    errors.name ? styleSingUp.errors : '',
+                  ].join(' ')}
                   placeholder="Confirm password"
                   type="password"
                 />
+                {errors['Confirm password'] && (
+                  <span className={styleSingUp.textErrors}>
+                    Password not verified
+                  </span>
+                )}
               </div>
-
               <Button variable="singIn" btnText={'sign up'} />
             </form>
           </div>
