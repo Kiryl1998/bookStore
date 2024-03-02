@@ -14,6 +14,10 @@
 .input {
   padding: 14px 0px 14px 20px;
   border: 1px solid #e7e7e7;
+  /* font-size: 16px; */
+}
+.input:focus{
+  outline: none;
 }
 .subInput {
   margin-top: 10px;
