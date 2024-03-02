@@ -30,6 +30,7 @@ const SingUp = () => {
     formState: { errors, isValid },
   } = useForm<myForm>({ mode: 'onChange' });
 
+  console.log(watch('name'));
   const submit: SubmitHandler<myForm> = (data) => {
     if (localStorage.getItem('User')) {
       const local: myForm[] = JSON.parse(localStorage.getItem('User')!);
@@ -148,7 +149,7 @@ const SingUp = () => {
                   })}
                   className={[
                     styleInputForm.input,
-                    errors.name ? styleSingUp.errors : '',
+                    errors['Confirm password'] ? styleSingUp.errors : '',
                   ].join(' ')}
                   placeholder="Confirm password"
                   type="password"
